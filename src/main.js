@@ -4,6 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//引入全局的css
+import '../static/global/global.css'
+
+// 导入axios
+import * as api from './restful/api.js'
+Vue.prototype.$http=api;
+
 //element Ui导入
 import ElementUI from 'element-ui';
 //导入样式
@@ -12,11 +19,24 @@ import 'element-ui/lib/theme-chalk/display.css';
 //调用插件
 Vue.use(ElementUI);
 
-//引入全局的css
-import '../static/global/global.css'
-
 // 引入icon图标
 import './fonts.css'
+
+// 引入轮播图组件
+import cyclePic from '@/components/Common/cyclePic.vue'
+Vue.component('my-cyclePic',cyclePic);
+//引入动画组件二secodAnimation
+import secodAnimation from '@/components/Common/secodAnimation.vue'
+Vue.component('my-secodAnimation',secodAnimation);
+//引入动画组件三thirdAnimation
+import thirdAnimation from '@/components/Common/thirdAnimation.vue'
+Vue.component('my-thirdAnimation',thirdAnimation);
+//新闻组件二 secondNews
+import secondNews from '@/components/Common/secondNews.vue'
+Vue.component('my-secondNews',secondNews);
+//pag
+import pag from '@/components/Common/pag.vue'
+Vue.component('my-pag',pag);
 
 //引入动画组件一
 import FirstAnimation from '@/components/Common/FirstAnimation.vue' 
@@ -38,11 +58,8 @@ Vue.component('my-FirstNew',FirstNew);
 
 
 //引入脚部
-import Footer from '@/components/Common/Footer.vue' 
+import Footer from "@/components/Common/Footer.vue"
 Vue.component('Footer',Footer);
-
-
-
 
 
 Vue.config.productionTip = false

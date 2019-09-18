@@ -1,4 +1,7 @@
 <template>
+	<div>
+		我是展示
+	</div>
 </template>
 
 <script>
