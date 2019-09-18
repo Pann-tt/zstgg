@@ -14,29 +14,38 @@ export default new Router({
 	linkActiveClass:'is-active',
 	mode:'history',//改成history模式
   	routes: [
-  	{
-  		path:'/',
-  		redirect:'/home'
-  	},
-    {
-      path: '/home',
-      name: 'Home',
-      component: Home
-    },
-    {
-    	path: '/display',
-      name: 'Display',
-      component: Display
-    },
-    {
-    	path: '/news',
-      	name: 'News',
-      	component: News
-    },
-    {
-     	path: '/about',
-      	name: 'About',
-      	component: About
-    },
-  ]
+  		{
+  			path:'/',
+  			redirect:'/home'
+  		},
+    	{
+     	 	path: '/home',
+      		name: 'Home',
+      		component: Home
+
+    	},
+    	{
+     	 	path: '/display',
+      		name: 'Display',
+      		component: Display
+
+    	},
+    	{
+     	 	path: '/news',
+      		name: 'News',
+      		component: News
+
+    	},
+    	{
+     	 	path: '/about',
+      		name: 'About',
+      		component: About
+    	}
+
+  	],
+    scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return { x: 0, y: 0 }
+  }
+
 })
