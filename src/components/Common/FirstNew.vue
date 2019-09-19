@@ -1,6 +1,6 @@
 <template>
 	<div class="firstnewouter">
-		<ul>
+		<ul class="container">
 			<li class="fnli">
 				<div class="title">
 						创客云-建站资源共享学习平台

@@ -15,7 +15,7 @@
 			</p>
 		</div>
 		<!-- 按钮 -->
-		<div class="btn">
+		<div class="btn" @click='enterNewsDetail'>
 			<div>查看详情</div>
 		</div>
 	</div>
@@ -31,6 +31,13 @@ export default {
 
     };
   },
+  methods:{
+  	enterNewsDetail(){
+  		this.$router.push({
+        name:"NewsDetail",
+       })
+  	}
+  }
 };
 </script>
 
@@ -82,6 +89,7 @@ export default {
 	}
 	.secondNew .btn>div:hover{
 		background-color: #1dcfd1;
+		border: 2px solid #1dcfd1;
 		color:#fff;
 	}
 	.secondNew .btn>div{

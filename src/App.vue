@@ -11,6 +11,7 @@
       <div class="slideTop">
         <my-slide />
       </div>
+
   </div>
 </template>
 
@@ -20,6 +21,12 @@ export default {
   name: 'App',
   components:{
     Header,
+  },
+  created(){
+    let loading=document.getElementById('loading')
+    if(loading != null){
+      document.body.removeChild(loading);
+    }
   }
 };
 </script>

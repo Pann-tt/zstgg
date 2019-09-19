@@ -58,6 +58,7 @@ export default {
 	height: 130px;
 	z-index: 100;
 	background-color: #fff;
+	box-shadow: 4px 6px 11px rgba(200,200,200,0.2);
 }
 .el-header{
 	width: 100%;
@@ -67,6 +68,7 @@ export default {
 	width: 88%;
 	height: 100%;
 	margin: 0 auto;
+
 }
 /*左边*/
 .mainHeader .nav-left{
