@@ -88,7 +88,7 @@ export default {
 		width:270px;
 		float: left;
 		padding: 100px 0;
-		margin:0 10px;
+		margin:0 6px;
 	}
 	.footouter h5{
 		color: #fff;

@@ -85,9 +85,11 @@ export default {
 	.firstAniOuter .iconouter{
 		display:inline-block;
 		cursor: pointer;
-		width: 118px;
-		height: 118px;
+		width: 110px;
+		height: 110px;
 		text-align: center;
+		border: 4px solid #fff;
+		border-radius: 57px;
 		/*line-height: 118px;*/
 	}
 	.firstAniOuter .icons{
@@ -98,36 +100,27 @@ export default {
 		text-align: center;
 		line-height: 100px;
 		margin:4px 4px;
+		transition: background 0.8s;
 	}
-	.firstAniOuter .iconouter:hover .icons{
-		background-color: rgb(29,207,209);
-	}
-	.litwo .firstAniOuter .iconouter:hover .icons{
+	.firstAniOuter  .icons:hover{
+		background-color: rgb(29,207,209);	
+	    transition: transform 0.5s, opacity 0.4s;
+	    transform: scale(1.1);
+	}	
+	.litwo .firstAniOuter .icons:hover{
 		background-color: rgb(114,72,245);
 	}
-	.lithree .firstAniOuter .iconouter:hover .icons{
+	.lithree .firstAniOuter .icons:hover{
 		background-color: rgb(240,81,53);
 	}
-	.firstAniOuter .iconouter:hover .iconfont{
+	.firstAniOuter .icons:hover .iconfont{
 		color: #fff;
 	}
-	.litwo .firstAniOuter .iconouter:hover .iconfont{
+	.litwo .firstAniOuter .icons:hover .iconfont{
 		color: #fff;
 	}
-	.lithree .firstAniOuter .iconouter:hover .iconfont{
+	.lithree .firstAniOuter .icons:hover .iconfont{
 		color: #fff;
-	}
-	.firstAniOuter .iconouter:hover {
-		width: 110px;
-		height: 110px;
-		border: 4px solid rgb(29,207,209);
-		border-radius: 57px;
-	}
-	.litwo .firstAniOuter .iconouter:hover {
-		border: 4px solid rgb(114,72,245);
-	}
-	.lithree .firstAniOuter .iconouter:hover {
-		border: 4px solid rgb(240,81,53);
 	}
 	.firstAniOuter .icons .iconfont{
 		font-size: 52px;

@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home/Home.vue'
 import Display from '@/components/Display/Display.vue'
 import News from '@/components/News/News.vue'
+import NewsDetail from '@/components/News/NewsDetail.vue'
 import About from '@/components/About/About.vue'
 
 Vue.use(Router)
@@ -22,20 +23,22 @@ export default new Router({
      	 	path: '/home',
       		name: 'Home',
       		component: Home
-
     	},
     	{
      	 	path: '/display',
       		name: 'Display',
       		component: Display
-
     	},
     	{
      	 	path: '/news',
       		name: 'News',
       		component: News
-
     	},
+      {
+        path: '/newsdetail',
+          name: 'NewsDetail',
+          component: NewsDetail
+      },
     	{
      	 	path: '/about',
       		name: 'About',

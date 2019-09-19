@@ -4,7 +4,10 @@
     <div class="head">
       <Header />
     </div>
-     <router-view/>
+     <router-view/>  
+    <!-- 脚部 -->
+    <Footer />
+      
   </div>
 </template>
 
@@ -14,6 +17,12 @@ export default {
   name: 'App',
   components:{
     Header,
+  },
+  created(){
+    let loading=document.getElementById('loading')
+    if(loading != null){
+      document.body.removeChild(loading);
+    }
   }
 };
 </script>

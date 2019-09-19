@@ -4,23 +4,12 @@
 		<my-SecondText :title='titleone'/>
 		<div class="newscontent">
 			<div class="container">
-				<!-- 左边新闻组件 -->
-				<div class="nnew">
-					<div class="news">
-					<my-secondNews />
-					</div>
-					<div class="news">
-						<my-secondNews />
-					</div>
-					<div class="news">
-						<my-secondNews />
-					</div>
-						<!-- 引入分页组件 -->
-					<div class="paging">
-						<my-pag />
-					</div>
+				<!-- 左边新闻详情 -->
+				<div class="newdetail">
+					<div class="heading">公司成立</div>
+					<span class="time">2016-03-07/</span><span class="author">admin</span>
+					<p>2014年9月，为响应相关部门关于智慧城市建设科教先行的号召，发起成立株洲市智慧文化传播有限公司，成立专业团队进行智慧城市建设的系列宣传工作，拟依次以智慧社区、智慧旅游、智慧交通、智慧教育等十个主题，完成相关产业的宣传及建设单位汇集工作。</p>
 				</div>
-				
 				<!-- 右边侧栏目 -->
 				<div class="sideright">
 					<div class="relaside">
@@ -71,30 +60,29 @@
 						<div class="productimg">
 							<ul>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni1.jpg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni2.jpeg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni3.jpg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni4.jpg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni5.png">
 									<div class="mask"></div>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -103,11 +91,11 @@
 <script>
 export default {
 
-  name: 'News',
+  name: 'NewsDetail',
 
   data() {
     return {
-    	titleone:'新闻中心',
+    	titleone:'公司新闻',
     	shownews:true,
     };
   },
@@ -132,17 +120,31 @@ export default {
 		padding-bottom: 50px;
 		background-color: rgb(245,249,250);
 	}
-	.newscontent .nnew{
-		float: left;
-		width:740px;
-	}
-	.newscontent .news{
-		display: inline-block;
+	.newscontent .newdetail{
+		padding:40px;
+		width:770px;
 		margin:25px 0;
+		background-color: #fff;
+		float: left;
+	}
+	.newscontent .newdetail .heading{
+		font-size: 40px;
+		font-weight: 500;
+		margin-bottom: 10px;
+	}
+	.newscontent .newdetail span{
+		color: #C1C1C1;
+	}
+	.newscontent .newdetail p{
+		margin:30px 0;
+		color: #969595;
+		font-size: 16px;
+		line-height: 35px;
 	}
 	.newscontent .container{
 		position: relative;
 		height: auto;
+		/*overflow:auto;*/
 	}
 	.newscontent .container::after{
 		content:'';
@@ -156,6 +158,7 @@ export default {
 		margin-top:25px;
 		margin-bottom: 70px;
 		width:265px;
+		height:900px;
 	}
 	.newscontent .sideright .relaside{
 		background-color: #fff;

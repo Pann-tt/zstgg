@@ -1,7 +1,7 @@
 <template>
 	<div class="firsttextouter">
-		<div class="title">新闻中心</div>
-		<div class="describe">Latest News</div>
+		<div class="title">{{title}}</div>
+		<div class="describe">{{des}}</div>
 		<div class="line"></div>
 	</div>
 </template>
@@ -10,7 +10,7 @@
 export default {
 
   name: 'FirstText',
-
+  props:['title','des'],
   data() {
     return {
 
@@ -37,7 +37,7 @@ export default {
 		display:inline-block;
 	}
 	.firsttextouter .describe{
-	    font-family: "Lato", 'Helvetica', 'Arial', 'sans-serif';
+	    font-style:italic;
 		color:rgb(152,162,164);
 		font-size:20px;
 	}

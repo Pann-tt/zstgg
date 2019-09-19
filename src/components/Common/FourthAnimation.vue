@@ -53,14 +53,13 @@ export default {
 		font-weight: 450;
 		margin-bottom: 25px;
 	}
-	.fourAni .productimg{
 
-	}
 	.fourAni .productimg li{
 		position: relative;
 		display: inline-block;
 		width:86px;
 		height: 86px;
+		cursor: pointer;
 	}
 	.fourAni .productimg li .mask{
 		position: absolute;

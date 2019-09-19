@@ -15,7 +15,7 @@
 			</p>
 		</div>
 		<!-- 按钮 -->
-		<div class="btn">
+		<div class="btn" @click='enterNewsDetail'>
 			<div>查看详情</div>
 		</div>
 	</div>
@@ -31,6 +31,13 @@ export default {
 
     };
   },
+  methods:{
+  	enterNewsDetail(){
+  		this.$router.push({
+        name:"NewsDetail",
+       })
+  	}
+  }
 };
 </script>
 
@@ -39,7 +46,7 @@ export default {
 		width: 740px;
 		height:200px;
 		padding: 40px;
-		background-color: #e0e0e0;
+		background-color: #fff;
 		position: relative;
 	}
 	/*标题*/
@@ -80,8 +87,9 @@ export default {
 		bottom: 0;
 		cursor: pointer;
 	}
-	.secondNew .btn:hover{
+	.secondNew .btn>div:hover{
 		background-color: #1dcfd1;
+		border: 2px solid #1dcfd1;
 		color:#fff;
 	}
 	.secondNew .btn>div{

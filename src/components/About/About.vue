@@ -21,6 +21,24 @@
 				</div>
 			</div>
 		</div>
+		<div class="goal">
+			<!-- 引入文字组件一 -->
+			<my-FirstText :title='titletwo' :des='destwo'/>
+			<!-- 左边文字 -->
+			<div class="goaltext">
+				在智尚科技的未来发展中，将以株洲的智慧社区等项目建设为起点，通过建设示范，逐步推进智慧旅游、智慧交通、智慧校园、智慧医疗等等项目的开发建设，逐步形成一套行之有效、持续运营的智慧城市运营体系，进而以株洲为智慧城市运营样板，以深圳为营销基地，向全国推广运营模式，成为国内领先的智慧城市运营商。
+			</div>
+			<!-- 右边图片 -->
+			<div class="goalimg">
+				<img src="../../assets/images/goal.png">
+			</div>
+		</div>
+		<div class="bottomtab">
+			<div class="english">Smart City Operator</div>
+			<div class="chinese">智慧城市运营商</div>
+			<p>公司将充分利用珠三角众多湘籍深圳高科技企业人士的技术、产品、资金等各方资源，致力于以长、株、潭为核心的湖南智慧城市建设</p>
+		</div>
+
 	</div>
 </template>
 
@@ -32,7 +50,7 @@ export default {
   data() {
     return {
     	titleone:'关于我们',
-    	
+    	titletwo:'我们的目标',destwo:'Our Goal',
     };
   },
 };
@@ -45,6 +63,7 @@ export default {
 	.produce .produceimg img{
 		width:668px;
 		height: 550px;
+		display: block;
 	}
 	.produce .producetext{
 		float: right;
@@ -64,5 +83,48 @@ export default {
 		font-size: 18px;
 		font-weight: 600;
 		color:  rgb(29,207,209);
+	}
+	.goal{
+		padding-top: 12px;
+		height: 570px;
+		background-color: rgb(236,240,241);
+	}
+	.goal .goaltext{
+		font-size: 16px;
+		display:inline-block;
+		width:400px;
+		margin:35px 100px;
+		line-height: 30px;
+	}
+	.goal .goalimg{
+		display:inline-block;
+		float: right;
+	}
+	.goal .goalimg img{
+		width:668px;
+		height: 320px;
+	}
+	.bottomtab{
+		background:url(../../assets/images/cta_parallax.jpg) no-repeat fixed  0 0; 
+		 background-position: center center;
+		 background-size: cover;
+		height: 400px;
+		text-align: center;
+	}
+	.bottomtab .english,.chinese,p{
+		color: #fff;
+	}
+	.bottomtab .english{
+		font-size:18px;
+		padding-top:50px;
+
+	}
+	.bottomtab .chinese{
+		font-size:50px;
+		margin:40px 0;
+	}
+	.bottomtab p{
+		font-size: 20px;
+
 	}
 </style>
