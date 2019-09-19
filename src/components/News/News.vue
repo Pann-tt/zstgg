@@ -109,6 +109,11 @@ export default {
     return {
     	titleone:'新闻中心',
     	shownews:true,
+    	newsCategory:[
+	    	{id:1,cate:"公司新闻"},
+	    	{id:2,cate:"行业新闻"},
+	    	{id:3,cate:"最新动态"}
+    	]
     };
   },
   methods:{

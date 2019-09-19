@@ -7,7 +7,7 @@
 				<!-- 左边新闻详情 -->
 				<div class="newdetail">
 					<div class="heading">公司成立</div>
-					<span class="time">2016-03-07/</span><span class="author">admin</span>
+					<span class="time">2016-03-07/</span><span class="author">admin</span>&nbsp;&nbsp;<span class="iconfont">&#xe60b;1200</span>
 					<p>2014年9月，为响应相关部门关于智慧城市建设科教先行的号召，发起成立株洲市智慧文化传播有限公司，成立专业团队进行智慧城市建设的系列宣传工作，拟依次以智慧社区、智慧旅游、智慧交通、智慧教育等十个主题，完成相关产业的宣传及建设单位汇集工作。</p>
 				</div>
 				<!-- 右边侧栏目 -->
@@ -97,6 +97,11 @@ export default {
     return {
     	titleone:'公司新闻',
     	shownews:true,
+    	newsCategory:[
+	    	{id:1,cate:"公司新闻"},
+	    	{id:2,cate:"行业新闻"},
+	    	{id:3,cate:"最新动态"}
+    	]
     };
   },
   methods:{

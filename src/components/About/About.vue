@@ -30,7 +30,7 @@
 			</div>
 			<!-- 右边图片 -->
 			<div class="goalimg">
-				<img src="../../assets/images/goal.png">
+				<img src="../../assets/images/goal3.jpg">
 			</div>
 		</div>
 		<div class="bottomtab">
@@ -57,12 +57,20 @@ export default {
 </script>
 
 <style lang="css" scoped>
+	.produce{
+		font-size: 0px;
+	}
 	.produce .produceimg,.produce .producetext{
 		display: inline-block;
 	}
-	.produce .produceimg img{
+	.produce .produceimg{
 		width:668px;
 		height: 550px;
+		overflow: hidden;
+	}
+	.produce .produceimg img{
+		width:auto;
+		height: 100%;
 		display: block;
 	}
 	.produce .producetext{
@@ -74,7 +82,7 @@ export default {
 		font-size:28px ;
 	}
 	.produce .producetext p{
-		margin:25px 0;
+		margin:20px 0;
 		line-height: 30px;
 		font-size: 16px;
 		color: rgb(152,162,164);
@@ -98,11 +106,14 @@ export default {
 	}
 	.goal .goalimg{
 		display:inline-block;
+		width:668px;
+		height: 340px;
+		overflow: hidden;
 		float: right;
 	}
 	.goal .goalimg img{
-		width:668px;
-		height: 320px;
+		width:auto;
+		height: 100%;
 	}
 	.bottomtab{
 		background:url(../../assets/images/cta_parallax.jpg) no-repeat fixed  0 0; 
