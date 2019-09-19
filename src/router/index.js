@@ -4,6 +4,7 @@ import Router from 'vue-router'
 //引入路由模块
 import Home from '@/components/Home/Home.vue'
 import Display from '@/components/Display/Display.vue'
+import DisplayDetail from '@/components/Display/DisplayDetail.vue'
 import News from '@/components/News/News.vue'
 import About from '@/components/About/About.vue'
 
@@ -28,20 +29,22 @@ export default new Router({
      	 	path: '/display',
       		name: 'Display',
       		component: Display
-
     	},
+      {
+        path: '/display/displaydetail',
+          name: 'DisplayDetail',
+          component: DisplayDetail
+      },
     	{
      	 	path: '/news',
       		name: 'News',
       		component: News
-
     	},
     	{
      	 	path: '/about',
       		name: 'About',
       		component: About
     	}
-
   	],
     scrollBehavior (to, from, savedPosition) {
     // return 期望滚动到哪个的位置

@@ -1,10 +1,16 @@
 <template>
   <div id="app"> 
+    <div id="target"></div>
     <!-- 导航区域 -->
+    <Header />
     <div class="head">
       <Header />
     </div>
-     <router-view/>
+    <router-view/>
+      <Footer />
+      <div class="slideTop">
+        <my-slide />
+      </div>
   </div>
 </template>
 
@@ -19,5 +25,16 @@ export default {
 </script>
 
 <style>
+.head{
+  width: 100%;
+  height: 130px;
+}
+.slideTop{
+  widows: 40px;
+  height: 60px;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+}
 </style>
 

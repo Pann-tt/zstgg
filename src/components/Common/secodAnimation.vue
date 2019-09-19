@@ -1,13 +1,13 @@
 <template>
 	<div class="secodAni">
 		<div class="sAbgImg" @mouseenter="sAenter" @mouseleave="sAleave">
-			<img src="../../assets/images/secondAni1.jpg">
+			<img :src="homeitem.imgSrc">
 			<!-- 上半部分 -->
 			<transition name="el-zoom-in-top">
         		<div v-show="sAshow" class="transition-box sAmaskOne">
         			<div class="cycleLinkTop">
-        				<span>图</span>
-        				<span>图</span>
+        				<span class="iconfont">&#xe627;</span>
+        				<span class="iconfont">&#xe62b;</span>
         			</div>
         		</div>
       		</transition>
@@ -15,7 +15,7 @@
 			<transition name="el-zoom-in-bottom">
         		<div v-show="sAshow" class="transition-box sAmaskTwo">
         			<div class="cycleLinkBottom">
-        				<p>UX与UI不是对立而是共生</p>
+        				<p>{{homeitem.text}}</p>
         				<p>网页设计</p>
         			</div>
         		</div>
@@ -34,6 +34,7 @@ export default {
     	sAshow:false,
     };
   },
+  props:["homeitem"],
   methods:{
   	sAenter(){
   		this.sAshow=true;

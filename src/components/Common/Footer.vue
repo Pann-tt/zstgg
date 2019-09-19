@@ -1,6 +1,6 @@
 <template>
 	<div class="footouter">
-		<div class="container">
+		<div class="container" id="oneDiv">
 			<!-- 左一部分 -->
 			<div class="leftone">
 				<h5>关于我们</h5>
@@ -76,6 +76,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+	#oneDiv .leftone,#oneDiv .lefttwo{
+		width: 255px;
+	}
 	.footouter{
 		background-color: rgb(27,28,31);
 		height: 580px;
@@ -114,13 +117,13 @@ export default {
 		margin-bottom:25px;
 	}
 	.footouter .lefttwo .up p{
-		margin-bottom: 8px;
+		margin-bottom: 15px;
 	}
 	.footouter .lefttwo .down .sp{
-		margin-top:25px;
+		margin-top:45px;
 	}
 	.footouter .lefttwo .down p{
-		margin:10px 0;
+		margin:20px 0;
 	}
 	.footouter .righttwo h5{
 		margin-bottom:25px;

@@ -22,6 +22,10 @@ Vue.use(ElementUI);
 // 引入icon图标
 import './fonts.css'
 
+// 引入瀑布流式布局
+import Waterfall from 'vue-waterfall/lib/waterfall'
+import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot'
+
 // 引入轮播图组件
 import cyclePic from '@/components/Common/cyclePic.vue'
 Vue.component('my-cyclePic',cyclePic);
@@ -61,13 +65,27 @@ Vue.component('my-FirstNew',FirstNew);
 import Footer from "@/components/Common/Footer.vue"
 Vue.component('Footer',Footer);
 
+//引入瀑布流组件
+import waterfall from "./components/Common/waterfall.vue"
+Vue.component('my-waterfall',waterfall);
+//引入侧边栏
+import slide from "./components/Common/slide.vue"
+Vue.component('my-slide',slide);
+//DisplayDetail
+import DisplayDetail from "./components/Display/DisplayDetail.vue"
+Vue.component('my-DisplayDetail',DisplayDetail);
+
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+  	el: '#app',
+  	router,
+  	components:{ 
+  		App,
+  		Waterfall,
+  		WaterfallSlot,
+  	},
+  	template: '<App/>'
 })

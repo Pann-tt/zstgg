@@ -14,6 +14,7 @@
                 </div>
             </div>
       	</el-header>
+      	<div class="clear"></div>
     </el-container>
 </template>
 
@@ -40,6 +41,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.clear{ clear:both} 
 /*点击添加背景色*/
 .active{
 	color: #08A72C;
@@ -51,12 +53,15 @@ export default {
 
 /*导航栏*/
 .el-container{
+	position: fixed;
 	width: 100%;
 	height: 130px;
+	z-index: 100;
+	background-color: #fff;
 }
 .el-header{
 	width: 100%;
-	height: 100%;
+	height:130px;
 }
 .mainHeader{
 	width: 88%;
