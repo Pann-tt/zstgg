@@ -3,9 +3,11 @@
 		<!-- 文字组件二 -->
 		<my-SecondText :title='titleone'/>
 		<div class="produce">
+			<!-- 左边图片 -->
 			<div class="produceimg">
 				<img src="../../assets/images/about_us_intro.jpg">
 			</div>
+			<!-- 右边文字 -->
 			<div class="producetext">
 				<div class="title">
 					湖南智尚科技发展有限公司
@@ -98,12 +100,26 @@ export default {
 		background-color: rgb(236,240,241);
 	}
 	.goal .goaltext{
-		font-size: 16px;
+		/*cursor: pointer;*/
+		font-size: 18px;
 		display:inline-block;
 		width:400px;
 		margin:35px 100px;
 		line-height: 30px;
+		/*transition:all 1.5s ease;*/
 	}
+	/*.goal .goaltext:hover{
+		color:#fff;
+		animation:Glow 1s ease infinite alternate;
+	}
+	@keyframes Glow {
+		from {
+		text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,0 0 40px #00a67c,0 0 70px #00a67c,0 0 80px #00a67c,0 0 100px #00a67c,0 0 150px #00a67c;
+		}
+		to {
+			text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #00a67c,0 0 35px #00a67c,0 0 40px #00a67c,0 0 50px #00a67c,0 0 75px #00a67c;
+		}
+	}*/
 	.goal .goalimg{
 		display:inline-block;
 		width:668px;

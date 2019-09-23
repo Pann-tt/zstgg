@@ -33,7 +33,12 @@
 			<my-FirstText :title="title" :des="des"></my-FirstText>
 		</div>
 		<div class="honeNews">
-			<my-FirstNew></my-FirstNew>
+			<ul>
+				<li v-for='(newsItem,index) in newNews' :key="index" >
+					<my-FirstNew :newsItem='newsItem'></my-FirstNew>
+				</li>
+			</ul>
+			
 		</div>
 	</div>
 </template>
@@ -42,13 +47,14 @@
 export default {
   name: 'Home',
 
-  data() {
-    return {
-    	allproductList:[],
-    	title:"新闻中心",
-    	des:"Latest News",
-    };
-  },
+  	data() {
+	    return {
+	    	allproductList:[],
+	    	title:"新闻中心",
+	    	des:"Latest News",
+	    	newNews:{},
+	    };
+  	},
   	methods:{
   		getallproductList(){
 	      	this.$http.allproductList()
@@ -59,9 +65,20 @@ export default {
 	        	console.log(err);
 	      	})
 	    },
+	    getAllNews(){
+	  		this.$http.AllNews()
+	  		.then(res=>{
+	  			this.newNews=res.results;
+	  			this.newNews.length = 3;
+	  		})
+	  		.catch(err=>{
+	  			console.log(err);
+	  		})
+  		},
   	},
   	created(){
     	this.getallproductList();
+    	this.getAllNews();
   	},
 };
 </script>

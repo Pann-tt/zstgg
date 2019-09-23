@@ -31,23 +31,10 @@
 			<!-- 右二部分 -->
 			<div class="righttwo">
 				<h5>企业动态</h5>
-				<div class="dynamic">
-					<div class="title">
-						创客云-建站资源共享学习平台
+				<div class="dynamic"  v-for='(New,index) in newNews' :key="index">
+					<div class="title" v-html='New.title' @click='enterNewsDetail(New.id)'>			
 					</div>
-					<span class="time">2016-03-07/</span><span class="author">admin</span>
-				</div>
-				<div class="dynamic">
-					<div class="title">
-						创客云-建站资源共享学习平台
-					</div>
-					<span class="time">2016-03-07/</span><span class="author">admin</span>
-				</div>
-				<div class="dynamic">
-					<div class="title">
-						创客云-建站资源共享学习平台
-					</div>
-					<span class="time">2016-03-07/</span><span class="author">admin</span>
+					<span class="time">{{moment(New.date).format('YYYY-MM-DD')}}/</span><span class="author">{{New.user}}</span>
 				</div>
 			</div>
 			<!-- 右一部分 动画组件四 -->
@@ -57,7 +44,7 @@
 		</div>
 		<!-- 底部 -->
 		<div class="bottom">
-			<div>Copyright © 创客云 版权所有</div>
+			<div>Copyright © 智尚科技 版权所有</div>
 		</div>
 	</div>
 </template>
@@ -66,14 +53,33 @@
 export default {
 
   name: 'Footer',
-
   data() {
     return {
-
+    	newNews:{},
     };
   },
   methods:{
-  	
+  	getAllNews(){
+  		this.$http.AllNews()
+  		.then(res=>{
+  			this.newNews=res.results;
+  			this.newNews.length = 3;
+  		})
+  		.catch(err=>{
+  			console.log(err);
+  		})
+  	},
+  	enterNewsDetail(id){
+  		this.$router.push({
+        name:"NewsDetail",
+        params:{
+        	newsId:id
+        }
+       });
+  	}
+  },
+  created(){
+  	this.getAllNews();
   },
 };
 </script>

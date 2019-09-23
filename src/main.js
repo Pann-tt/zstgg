@@ -4,6 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import Router from 'vue-router'
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
+
+
 //引入全局的css
 import '../static/global/global.css'
 
@@ -19,19 +28,17 @@ import 'element-ui/lib/theme-chalk/display.css';
 //调用插件
 Vue.use(ElementUI);
 
-import moment from 'moment'    
-Vue.prototype.moment=moment;
 
 // 引入icon图标
 import './fonts.css'
-import store from '../src/store/index.js'
-
-import Viewer from 'v-viewer'
-import 'viewerjs/dist/viewer.css'
 
 // 引入瀑布流式布局
 import Waterfall from 'vue-waterfall/lib/waterfall'
 import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot'
+
+// 引入时间戳插件
+import moment from 'moment'       
+Vue.prototype.moment=moment; 
 
 // 引入轮播图组件
 import cyclePic from '@/components/Common/cyclePic.vue'
@@ -48,6 +55,8 @@ Vue.component('my-secondNews',secondNews);
 //pag
 import pag from '@/components/Common/pag.vue'
 Vue.component('my-pag',pag);
+import Page from '@/components/Common/Page.vue'
+Vue.component('my-Page',Page);
 
 //引入动画组件一
 import FirstAnimation from '@/components/Common/FirstAnimation.vue' 
@@ -66,7 +75,9 @@ Vue.component('my-SecondText',SecondText);
 // 引入新闻组件一
 import FirstNew from '@/components/Common/FirstNew.vue' 
 Vue.component('my-FirstNew',FirstNew);
-
+//引入新闻右边组件
+import NewsRight from '@/components/Common/NewsRight.vue' 
+Vue.component('my-NewsRight',NewsRight);
 
 //引入脚部
 import Footer from "@/components/Common/Footer.vue"

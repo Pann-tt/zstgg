@@ -2,20 +2,18 @@
 	<div class="secondNew">
 		<!-- 标题 -->
 		<div class="title">
-			<h1><a href="#">创客云-建站资源共享学习平台</a></h1>
+			<h1><a href="#" v-html='subItem.title'></a></h1>
 		</div>
 		<!-- 时间 -->
 		<div class="date">
-			<span>2016-03-07</span>&nbsp;/&nbsp;<span>by admin</span>
+			<span>{{moment(subItem.date).format('YYYY-MM-DD')}}</span>&nbsp;/&nbsp;<span v-html="subItem.user"></span>
 		</div>
 		<!-- 文本 -->
 		<div class="content">
-			<p>
-				创客云（www.22vd.com）专业提供网站模板，网页模板，网站源码，网站素材，网页特效等网页设计素材免费下载。我们致力于打造一个优秀的建站资源共享学习平台。 创客云离不开您的参与，如果您 ：
-			</p>
+			<p v-html="subItem.content" style="-webkit-line-clamp:3;height:80px;"></p>
 		</div>
 		<!-- 按钮 -->
-		<div class="btn" @click='enterNewsDetail'>
+		<div class="btn" @click='enterNewsDetail(subItem.id)'>
 			<div>查看详情</div>
 		</div>
 	</div>
@@ -25,16 +23,19 @@
 export default {
 
   name: 'secondNews',
-
+  props:['subItem'],
   data() {
     return {
 
     };
   },
   methods:{
-  	enterNewsDetail(){
+  	enterNewsDetail(id){
   		this.$router.push({
         name:"NewsDetail",
+        params:{
+        	newsId:id
+        }
        })
   	}
   }
@@ -75,6 +76,11 @@ export default {
 	}
 	.secondNew .content p{
 		font-size: 16px;
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-line-clamp: 3;
+	    -webkit-box-orient: vertical;
     	color: #98a2a4;
     	font-weight: normal;
     	line-height: 27px;

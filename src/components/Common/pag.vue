@@ -17,7 +17,7 @@
 export default {
 
   name: 'pag',
-
+  props:['pages'],
   data() {
     return {
     	page:1,

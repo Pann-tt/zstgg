@@ -6,28 +6,23 @@
 			<div class="container">
 				<!-- 左边新闻组件 -->
 				<div class="nnew">
-					<div class="news">
-					<my-secondNews />
-					</div>
-					<div class="news">
-						<my-secondNews />
-					</div>
-					<div class="news">
-						<my-secondNews />
-					</div>
+						<ul>
+							<li class="news" v-for="subItem in news">
+								<my-secondNews :subItem='subItem'/>
+							</li>
+						</ul>
 						<!-- 引入分页组件 -->
 					<div class="paging">
-						<my-pag />
+						<my-Page :pages='pages'/><!-- @next-page='NextPage' @prev-page='PrevPage' @current-change='CurrentChange' -->
 					</div>
 				</div>
-				
 				<!-- 右边侧栏目 -->
 				<div class="sideright">
 					<div class="relaside">
 						<h4>相关栏目</h4>
-						<div><p>公司新闻</p><i class="iconfont">&#xe656;</i><br/></div>
-						<div><p>行业新闻</p><i class="iconfont">&#xe656;</i><br/></div>
-						<div><p>最新动态</p><i class="iconfont">&#xe656;</i></div>
+						<div @click='CompanyNews'><p>公司新闻</p><i class="iconfont">&#xe656;</i><br/></div>
+						<div  @click='IndustryNews'><p>行业新闻</p><i class="iconfont">&#xe656;</i><br/></div>
+						<div @click='BackNews'><p>最新动态</p><i class="iconfont">&#xe656;</i></div>
 					</div>
 					<div class="hotnews">
 						<div class="headline">
@@ -35,31 +30,19 @@
 							<span class="two" @click='mostHot' ref='two'>热门新闻</span>
 						</div>
 						<div class="xinnews" v-if='shownews'>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
+							<div class="dynamic" v-for='(New,index) in newNews' :key="index">
+								<div class="title" v-html='New.title' @click='enterNewsDetail(New.id)'>
+									
 								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
-							</div>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
-								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
-							</div>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
-								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
-							</div>
+								<span class="time">{{moment(New.date).format('YYYY-MM-DD')}}/</span><span class="author">{{New.user}}</span>
+							</div>					
 						</div>
 						<div class="renews" v-else>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
+							<div class="dynamic" v-for='Recommend in recommend'>
+								<div class="title" v-html='Recommend.title' @click='enterNewsDetail(Recommend.id)'>
+									
 								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
+								<span class="time">{{moment(Recommend.date).format('YYYY-MM-DD')}}/</span><span class="author">{{Recommend.user}}</span>
 							</div>
 						</div>
 					</div>
@@ -71,23 +54,23 @@
 						<div class="productimg">
 							<ul>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni1.jpg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni2.jpeg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni3.jpg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni4.jpg">
 									<div class="mask"></div>
 								</li>
 								<li>
-									<img src="../../assets/images/product1.jpg">
+									<img src="../../assets/images/secondAni5.png">
 									<div class="mask"></div>
 								</li>
 							</ul>
@@ -113,7 +96,14 @@ export default {
 	    	{id:1,cate:"公司新闻"},
 	    	{id:2,cate:"行业新闻"},
 	    	{id:3,cate:"最新动态"}
-    	]
+    	],
+    	categoryId:'',
+    	// pageId:1,
+    	news:{},
+    	pages:{},
+    	recommend:{},
+    	newNews:{},
+    	newsId:1,
     };
   },
   methods:{
@@ -126,8 +116,75 @@ export default {
   		this.shownews=false;
   		this.$refs.two.style.backgroundColor = "rgb(236,240,241)";
   		this.$refs.one.style.backgroundColor = "#fff";
-  	}
-  }
+  	},
+  	BackNews(){
+  		this.titleone='最新动态';
+  		this.categoryId='';
+  		this.$store.state.pageId=1;
+  		this.getNews(this.categoryId,this.$store.state.pageId);
+  	},
+  	CompanyNews(){
+  		this.titleone='公司新闻'; 		
+  		this.categoryId=1;
+  		this.$store.state.pageId=1;
+  		this.getNews(this.categoryId,this.$store.state.pageId);
+  	},
+  	IndustryNews(){
+  		this.titleone='行业新闻';
+  		this.categoryId=2;
+  		this.$store.state.pageId=1;
+  		this.getNews(this.categoryId,this.pageId);
+  	},
+  	enterNewsDetail(id){
+  		this.$router.push({
+        name:"NewsDetail",
+        params:{
+        	newsId:id
+        }
+       });
+
+  	},
+  	//获取全部新闻
+  	getAllNews(){
+  		this.$http.AllNews()
+  		.then(res=>{
+  			this.newNews=res.results;
+  			this.newNews.length=3;
+  		})
+  		.catch(err=>{
+  			console.log(err);
+  		})
+  	},
+  	//获取详情
+  	getNewsDetail(){
+  		this.$http.NewsDetail(1)
+  		.then(res=>{	
+  			this.recommend=res.recommend_list; 		
+ 			console.log(this.recommend);
+  		})
+  		.catch(err=>{
+  			console.log(err);
+  		})
+  	},
+  	// 获取分类新闻信息
+  	getNews(){
+  		this.$http.News(this.categoryId,this.$store.state.pageId)
+      .then(res=>{
+        console.log(res);
+        this.pages=res;
+        this.news=res.results; 
+        console.log(this.news); 
+        console.log(this.pages); 
+      }).catch(err=>{
+        console.log(err);
+      })
+  	},
+  },
+  created(){
+    this.getNews();
+    this.getAllNews();
+    this.getNewsDetail();
+  },
 };
 </script>
 
@@ -191,11 +248,12 @@ export default {
 		margin-top:40px;
 		background-color: #fff;
 		padding:20px;
-		height: 300px;
+		height: 315px;
 	}
 	.newscontent .sideright .hotnews .headline{
+
 		font-size: 18px;
-		margin:20px 0;
+		margin: 20px 0 35px 0;
 	}
 	.newscontent .sideright .hotnews .headline span{
 		cursor: pointer;
@@ -222,6 +280,12 @@ export default {
 		color: #BFBFBF;
 	}
 	.newscontent .sideright .hotnews .dynamic .title{
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-line-clamp:1;
+	    -webkit-box-orient: vertical;
+
 		margin-bottom:10px;
 		cursor: pointer;
 	}
