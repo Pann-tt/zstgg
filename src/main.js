@@ -11,7 +11,8 @@ Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 
-
+// vuex
+import store from '../src/store/index.js'
 
 //引入全局的css
 import '../static/global/global.css'
