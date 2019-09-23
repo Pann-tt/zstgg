@@ -4,6 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import Router from 'vue-router'
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
+
+// vuex
+import store from '../src/store/index.js'
+
 //引入全局的css
 import '../static/global/global.css'
 
@@ -25,6 +36,10 @@ import './fonts.css'
 // 引入瀑布流式布局
 import Waterfall from 'vue-waterfall/lib/waterfall'
 import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot'
+
+// 引入时间戳插件
+import moment from 'moment'       
+Vue.prototype.moment=moment; 
 
 // 引入轮播图组件
 import cyclePic from '@/components/Common/cyclePic.vue'
@@ -59,7 +74,9 @@ Vue.component('my-SecondText',SecondText);
 // 引入新闻组件一
 import FirstNew from '@/components/Common/FirstNew.vue' 
 Vue.component('my-FirstNew',FirstNew);
-
+//引入新闻右边组件
+import NewsRight from '@/components/Common/NewsRight.vue' 
+Vue.component('my-NewsRight',NewsRight);
 
 //引入脚部
 import Footer from "@/components/Common/Footer.vue"
@@ -82,6 +99,7 @@ Vue.config.productionTip = false
 new Vue({
   	el: '#app',
   	router,
+  	store,
   	components:{ 
   		App,
   		Waterfall,

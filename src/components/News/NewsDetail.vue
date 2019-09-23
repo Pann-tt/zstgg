@@ -6,9 +6,9 @@
 			<div class="container">
 				<!-- 左边新闻详情 -->
 				<div class="newdetail">
-					<div class="heading">公司成立</div>
-					<span class="time">2016-03-07/</span><span class="author">admin</span>&nbsp;&nbsp;<span class="iconfont">&#xe60b;1200</span>
-					<p>2014年9月，为响应相关部门关于智慧城市建设科教先行的号召，发起成立株洲市智慧文化传播有限公司，成立专业团队进行智慧城市建设的系列宣传工作，拟依次以智慧社区、智慧旅游、智慧交通、智慧教育等十个主题，完成相关产业的宣传及建设单位汇集工作。</p>
+					<div class="heading" v-html='newsdetail.title'></div>
+					<span class="time" >{{moment(newsdetail.date).format('YYYY-MM-DD')}}/</span><span class="author">{{newsdetail.user}}</span>&nbsp;&nbsp;<span class="iconfont">&#xe60b;&nbsp;{{newsdetail.clicks}}</span>
+					<p v-html='newsdetail.content'></p>
 				</div>
 				<!-- 右边侧栏目 -->
 				<div class="sideright">
@@ -16,7 +16,7 @@
 						<h4>相关栏目</h4>
 						<div><p>公司新闻</p><i class="iconfont">&#xe656;</i><br/></div>
 						<div><p>行业新闻</p><i class="iconfont">&#xe656;</i><br/></div>
-						<div><p>最新动态</p><i class="iconfont">&#xe656;</i></div>
+						<div @click='BackNews'><p>最新动态</p><i class="iconfont">&#xe656;</i></div>
 					</div>
 					<div class="hotnews">
 						<div class="headline">
@@ -24,31 +24,19 @@
 							<span class="two" @click='mostHot' ref='two'>热门新闻</span>
 						</div>
 						<div class="xinnews" v-if='shownews'>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
+							<div class="dynamic" v-for='(New,index) in newNews' :key="index">
+								<div class="title" v-html='New.title'  @click='enterNewsDetail(New.id)'>
+									
 								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
-							</div>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
-								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
-							</div>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
-								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
-							</div>
+								<span class="time">{{moment(New.date).format('YYYY-MM-DD')}}/</span><span class="author">{{New.user}}</span>
+							</div>					
 						</div>
 						<div class="renews" v-else>
-							<div class="dynamic">
-								<div class="title">
-									创客云-建站资源共享学习平台
+							<div class="dynamic" v-for='Recommend in recommend'>
+								<div class="title" v-html='Recommend.title' @click='enterNewsDetail(Recommend.id)'>
+									
 								</div>
-								<span class="time">2016-03-07/</span><span class="author">admin</span>
+								<span class="time">{{moment(Recommend.date).format('YYYY-MM-DD')}}/</span><span class="author">{{Recommend.user}}</span>
 							</div>
 						</div>
 					</div>
@@ -101,7 +89,11 @@ export default {
 	    	{id:1,cate:"公司新闻"},
 	    	{id:2,cate:"行业新闻"},
 	    	{id:3,cate:"最新动态"}
-    	]
+    	],
+    	newsdetail:{},
+    	newsId:1,
+    	recommend:{},
+    	newNews:{},
     };
   },
   methods:{
@@ -114,7 +106,49 @@ export default {
   		this.shownews=false;
   		this.$refs.two.style.backgroundColor = "rgb(236,240,241)";
   		this.$refs.one.style.backgroundColor = "#fff";
-  	}
+  	},
+  	BackNews(){
+  		this.$router.push({
+        name:"News",
+       })
+  	},
+  	enterNewsDetail(id){
+  		this.$router.push({
+        name:"NewsDetail",
+        params:{
+        	newsId:id
+        }
+       });
+
+  	},
+  	//获取全部新闻
+  	getAllNews(){
+  		this.$http.AllNews()
+  		.then(res=>{
+  			this.newNews=res.results;
+  			this.newNews.length = 3;
+  		})
+  		.catch(err=>{
+  			console.log(err);
+  		})
+  	},
+  	getNewsDetail(){
+  		this.$http.NewsDetail(this.$route.params.newsId)
+  		.then(res=>{	
+  			this.newsdetail = res;
+  			this.recommend=res.recommend_list;
+  		})
+  		.catch(err=>{
+  			console.log(err);
+  		})
+  	},
+  },
+  created(){
+    this.getNewsDetail();
+    this.getAllNews();
+  },
+  activated() {
+    this.getNewsDetail();
   }
 };
 </script>
@@ -139,6 +173,7 @@ export default {
 	}
 	.newscontent .newdetail span{
 		color: #C1C1C1;
+		font-size: 14px;
 	}
 	.newscontent .newdetail p{
 		margin:30px 0;
@@ -194,11 +229,11 @@ export default {
 		margin-top:40px;
 		background-color: #fff;
 		padding:20px;
-		height: 300px;
+		height: 315px;
 	}
 	.newscontent .sideright .hotnews .headline{
 		font-size: 18px;
-		margin:20px 0;
+		margin: 20px 0 35px 0;
 	}
 	.newscontent .sideright .hotnews .headline span{
 		cursor: pointer;
@@ -225,6 +260,11 @@ export default {
 		color: #BFBFBF;
 	}
 	.newscontent .sideright .hotnews .dynamic .title{
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-line-clamp:1;
+	    -webkit-box-orient: vertical;
 		margin-bottom:10px;
 		cursor: pointer;
 	}

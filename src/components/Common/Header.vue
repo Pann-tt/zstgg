@@ -34,6 +34,7 @@ export default {
     },
     methods:{
     	bgcAdd(index){
+    		this.$store.state.pageId=1;
       		this.current=index+1;
     	},
     }

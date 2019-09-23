@@ -6,7 +6,7 @@
     <div class="head">
       <Header />
     </div>
-    <router-view/>
+    <router-view :key="key"/>
       <Footer />
       <div class="slideTop">
         <my-slide />
@@ -22,6 +22,11 @@ export default {
   components:{
     Header,
   },
+  computed: {
+    key() {
+        return this.$route.name !== undefined? this.$route.name +new Date(): this.$route +new Date()
+    }
+ },
   created(){
     let loading=document.getElementById('loading')
     if(loading != null){
