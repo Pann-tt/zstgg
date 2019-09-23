@@ -1,12 +1,14 @@
 <template>
 	<div class="paging" id="displayPag">
 		<el-pagination
-	      @size-change="handleSizeChange"
-	      @current-change="handleCurrentChange"
-	      :current-page.sync="currentPage3"
-	      :page-size="9"
-	      layout="prev, pager, next, jumper"
-	      :total="13">
+			hide-on-single-page
+			@prev-click="prve(page)"
+			@next-click="next(page)"
+	      	@current-change="handleCurrentChange"
+	      	:current-page.sync="$store.state.page"
+	      	:page-size="5"
+	      	layout="prev, pager, next, jumper"
+	      	:total="11">
 	    </el-pagination>
 	</div>
 </template>
@@ -18,17 +20,33 @@ export default {
 
   data() {
     return {
-    	currentPage3:1,
+    	page:1,
+    	currentPage:1,
+    	leftItems: [],
+	    centerItems: [],
+	    rightItems: [],
+	    productList:[],
     };
   },
-  methods: {
-      handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
-      },
-      handleCurrentChange(val) {
-        console.log(`当前页: ${val}`);
-      }
-    },
+  	methods: {
+      	handleCurrentChange(val) {
+      		this.$store.commit('ispage',val)
+        	this.$parent.getproductList(this.page);
+     	},
+      	prve(page){
+      		this.page--;
+      		this.$store.commit('ispage',this.page)
+      		console.log(this.$store.state.page)
+      		this.$parent.getproductList(this.page);
+
+      	},
+      	next(page){
+	      	this.page++;
+	      	this.$store.commit('ispage',this.page)
+	      	console.log(this.$store.state.page)
+	      	this.$parent.getproductList(this.page);
+      	},
+  	},
 };
 </script>
 

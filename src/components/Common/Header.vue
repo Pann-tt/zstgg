@@ -29,14 +29,15 @@ export default {
 		        {id:3,name:'News',title:'新闻中心'},
 		        {id:4,name:'About',title:'关于我们'}
 		    ],
-		    current:0,
+		    current:1,
       	};
     },
     methods:{
     	bgcAdd(index){
       		this.current=index+1;
+      		this.$store.state.page=1;
     	},
-    }
+    },
 };
 </script>
 
@@ -44,11 +45,11 @@ export default {
 .clear{ clear:both} 
 /*点击添加背景色*/
 .active{
-	color: #08A72C;
+	color: #1dcfd1;
 	font-weight: bold;
 }
 .nav-right ul .active a{
-	color: #08A72C;
+	color: #1dcfd1;
 }
 
 /*导航栏*/

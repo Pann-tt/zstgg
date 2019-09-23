@@ -8,7 +8,7 @@
 			<div class="container">
 				<!-- 左边 -->
 				<div class="det-left"  @mouseover="enterPic" @mouseleave="leavePic">
-					<img  id="pict" src="../../assets/images/left1.jpg">
+					<img  id="pict" :src="picone">
 					<div v-if="BtnShow">
 						<button id="prev" @click="prve" v-if="prveShow">上一张</button>
 						<button id="next" @click="next" v-if="nextShow">下一张</button>
@@ -17,23 +17,16 @@
 				<!-- 右边 -->
 				<div class="det-right">
 					<div class="righttext">
-						<h2>Ux与UI不是对立而是共生</h2>
+						<h2>{{productDetail.title}}</h2>
 						<div class="text">
 							<p>
-								对于网站来说，公司设计团队完善UI的目的通常是为了提高UX。菜单项、按钮、文字、图像、视频以及其各自在页面上的位置构成了界面，所有这些要素都应当仔细规划。而这些就是UX的组成元素，它们的使用方式直接影响着用户的感觉。
-							</p>
-							<p>
-								我们首先通过几个示例来概览一下UI，说明有哪些策略可以帮助你了解为什么优秀的UX取决于UI的优劣，然后再详细讲解一下为什么塑造UI要比塑造UX容易（虽容易，但不一定就能做对）。
-							</p>
-							<h5>Web端UI的是与非</h5>
-							<p>
-								在web端，比方说设计师想添加拖拽文件作为整理内容的方式。这就属于UI的范畴。又比方说用户觉得这个网站没有另一家竞争对手的网站做得好，因为在另一家网站上用户能够轻松简单地听几个小时的音乐。这就属于UX的范畴。
+								{{productDetail.desc}}
 							</p>
 						</div>
 						<ul>
-							<li><span>时间：</span>2016-03-07 20:18</li>
+							<li><span>时间：</span>{{moment(productDetail.date).format('YYYY-MM-DD')}}</li>
 							<li><span>作者：</span>admin</li>
-							<li><span>点击：</span>10次</li>
+							<li><span>点击：</span>{{productDetail.clicks}}</li>
 						</ul>
 						<div class="icon">
 							<span class="iconfont"><a href="#">&#xe650;</a></span>
@@ -58,15 +51,16 @@ export default {
 
   data() {
     return {
+    	newsId:0,
+    	productDetail:[],
     	i:1,
     	BtnShow:false,
     	prveShow:false,
     	nextShow:true,
     	title:"网页设计",
-    	pic:[
-    		{id:1,imgSrc:require("../../assets/images/ui1.jpg")},
-    		{id:2,imgSrc:require("../../assets/images/ui2.jpg")}
-    	]
+    	pic:[],
+    	picone:[],
+    	max:0,
     };
   },
   methods:{
@@ -81,10 +75,9 @@ export default {
 		var nextBtn=document.getElementById("next");
 		var prevBtn=document.getElementById("prev");
 		//2.绑定事件
-		var max=2,min=1;
-		if(this.i<max){
+		if(this.i<length){
 			this.i++;
-			if(this.i==max){
+			if(this.i==length){
 				this.nextShow=false;
 			}
 		}else{
@@ -92,18 +85,16 @@ export default {
 		}
 		this.prveShow=true;
 		//事件驱动程序
-		pict.src=require(`../../assets/images/left${this.i}.jpg`);
-		
+		pict.src='http://'+this.productDetail.images[this.i].url;
   	},
   	prve(){
   		var pict=document.getElementById("pict");
 		var nextBtn=document.getElementById("next");
 		var prevBtn=document.getElementById("prev");
 		//2.绑定事件
-		var max=2,min=1;
-		if(this.i>min){
+		if(this.i>0){
 			this.i--;
-			if(this.i=min){
+			if(this.i=0){
 				this.prveShow=false;
 			}			
 		}else{
@@ -111,8 +102,27 @@ export default {
 		}
 		this.nextShow=true;
 		//事件驱动程序
-		pict.src=require(`../../assets/images/left${this.i}.jpg`);
-  	}
+		pict.src='http://'+this.productDetail.images[this.i].url;
+  	},
+  	//详情
+  	getproductDetail(){
+  		// this.dates=this.$route.params.dates;
+  		// console.log(this.$route.params);
+  		this.$http.productDetail(this.$route.params.newsId)
+      	.then(res=>{
+	        this.productDetail=res;
+	        this.length= this.productDetail.images.length;
+	        this.picone='http://'+this.productDetail.images[0].url;
+
+	        console.log(this.picone);
+      	})
+      	.catch(err=>{
+        	console.log(err);
+      	})
+  	},
+  },
+  created(){
+  	this.getproductDetail();
   }
 };
 </script>

@@ -28,10 +28,10 @@ export default new Router({
     	{
      	 	path: '/display',
       		name: 'Display',
-      		component: Display
+      		component: Display,
     	},
       {
-        path: '/display/displaydetail',
+        path: '/display/product/:newsId',
           name: 'DisplayDetail',
           component: DisplayDetail
       },

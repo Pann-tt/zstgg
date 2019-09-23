@@ -5,24 +5,8 @@
 		</div>
 		<div class="productimg">
 			<ul>
-				<li>
-					<img src="../../assets/images/product1.jpg">
-					<div class="mask"></div>
-				</li>
-				<li>
-					<img src="../../assets/images/product1.jpg">
-					<div class="mask"></div>
-				</li>
-				<li>
-					<img src="../../assets/images/product1.jpg">
-					<div class="mask"></div>
-				</li>
-				<li>
-					<img src="../../assets/images/product1.jpg">
-					<div class="mask"></div>
-				</li>
-				<li>
-					<img src="../../assets/images/product1.jpg">
+				<li v-for="item in allproductList" :key="item.id" @click="getdetail(item.id)">
+					<img :src="item.img">
 					<div class="mask"></div>
 				</li>
 			</ul>
@@ -37,9 +21,32 @@ export default {
 
   data() {
     return {
-
+    	allproductList:[],
     };
   },
+  methods:{
+  	getallproductList(){
+	      	this.$http.allproductList()
+	      	.then(res=>{
+	        	this.allproductList=res.results;
+				console.log(this.allproductList);
+	      	}).catch(err=>{
+	        	console.log(err);
+	      	})
+	    },
+  	getdetail(id){
+		console.log(id);
+	  	this.$router.push({
+		    name:'DisplayDetail',
+		    params:{
+	          	newsId:id,
+	        }
+       	})
+  	},
+  },
+  created(){
+    	this.getallproductList();
+  	},
 };
 </script>
 
@@ -60,6 +67,7 @@ export default {
 		width:86px;
 		height: 86px;
 		cursor: pointer;
+		margin-right: 4px;
 	}
 	.fourAni .productimg li .mask{
 		position: absolute;

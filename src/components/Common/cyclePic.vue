@@ -2,7 +2,7 @@
 	<div class="slide">
 		<el-carousel :interval="5000" arrow="always">
 	    	<el-carousel-item v-for="Item in cyclePicture" :key="Item.id">
-	    		<img :src="Item.src">
+	    		<img :src="Item.img">
 	    		<h2>{{Item.title}}</h2>
 	    	</el-carousel-item>
   		</el-carousel>
@@ -17,25 +17,26 @@ export default {
 
   data() {
     return {
-    	cyclePicture:[
-    		{
-          		id:1,
-          		src:require('../../../src/assets/images/slide_1_bg.jpg'),
-          		title: '大标题',
-        	},
-         	{
-          		id:2,
-          		src:require('../../../src/assets/images/slide_2_bg.jpg'),
-          		title: '大标题',
-        	},
-        	{
-          		id:3,
-          		src:require('../../../src/assets/images/slide_3_bg.jpg'),
-          		title: '大标题',
-        	},
-    	]
+    	cyclePicture:{},
     };
   },
+  methods:{
+    // 获取轮播图
+    getSlideShow(){
+        this.$http.cyclePicture()
+        .then(res=>{
+            this.cyclePicture=res;
+            console.log(this.cyclePicture);
+        }).catch(err=>{
+            console.log(err);
+        })
+    },
+  },
+  created(){
+    this.getSlideShow();
+  },
+  
+
 };
 </script>
 

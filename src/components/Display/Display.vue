@@ -6,11 +6,30 @@
 		</div>
 		<!-- 展示案例 -->
 		<div class="water">
-			<my-waterfall></my-waterfall>
+			<div class="waterfall-wrapper">
+			    <!-- 左边 -->
+			    <ul class="left-waterfall" ref="left">
+			      	<li class="item" v-for="(item, index) in leftItems" >
+			        	<my-thirdAnimation :item="item" :productList="productList"></my-thirdAnimation>
+			      	</li>
+			    </ul>
+			    <!-- 中间 -->
+			    <ul class="center-waterfall" ref="center">
+			      	<li class="item" v-for="(item, index) in centerItems" >
+			        	<my-thirdAnimation :item="item" :productList="productList"></my-thirdAnimation>
+			      	</li>
+			    </ul>
+			    <!-- 右边 -->
+			    <ul class="right-waterfall" ref="right">
+			      	<li class="item" v-for="(item, index) in rightItems" >
+			        	<my-thirdAnimation :item="item" :productList="productList"></my-thirdAnimation>
+			      	</li>
+			    </ul>
+ 	 		</div>
 		</div>
 		<!-- 分页 -->
 		<div class="pagings">
-			<my-pag></my-pag>
+			<my-pag ></my-pag>
 		</div>
 		<!-- 蓝色栏 -->
 		<div class="displayBlue">
@@ -24,56 +43,131 @@ export default {
 
   name: 'Display',
 
+
   data() {
     return {
     	width:"360px",
     	title:"产品展示",
+    	leftItems: [],
+	    centerItems: [],
+	    rightItems: [],
+	    productList:[],
+	    page:1,
+	    id:0,
+	    newsId:0,
     };
   },
+  	methods:{
+    	// 获取案列
+	    getproductList(){
+	      	this.$http.productList(this.$store.state.page)
+	      	.then(res=>{
+	        	this.productList=res.results;
+	        	var length=this.productList.length;
+
+            	console.log(length);
+            	//将数据一个一个依次分配给三个数组
+            	this.leftItems=[];
+	    	this.centerItems=[];
+	    	this.rightItems=[];
+            	for(let i=0;i<length;){
+            		//将数据给左边
+            		this.leftItems.push(this.productList[i]);
+            		i++;
+            		if(i>=length){
+            			break;
+            		}
+            		//将数据给中间
+            		this.centerItems.push(this.productList[i]);
+            		i++;
+            		if(i>=length){
+            			break;
+            		}
+            		//将数据给右边
+            		this.rightItems.push(this.productList[i]);
+            		i++;
+            		if(i>=length){
+            			break;
+            		}
+            	}
+	      	}).catch(err=>{
+	        	console.log(err);
+	      	})
+	    },
+  	},
+  	created(){
+    	this.getproductList();
+  	},
+  	
 };
 </script>
 
 <style lang="css" scoped>
-.mainDisplay{
-	background-color: #ecf0f1;
-}
-/*文本组件*/
-.displayText{
-	margin-bottom: 100px;
-}
-/*案例展示*/
-.displayAni{
-	width: 100%;
-	height: auto;
-}
-.displayAni ul{
-	padding: 15px 0;
-}
-/*瀑布流*/
-.water{
-	width:100%;
-	/*height: 3000px;*/
-	overflow: hidden;
-}
-/*分页*/
-.pagings{
-	height: 150px;
-	/*background-color: green;*/
-	width:88%;
-	margin:0 auto;
-	padding-left: 22px;
-}
-/*蓝色栏*/
-.displayBlue{
-	width:100%;
-	height: 50px;
-	background-color: #1dcfd1;
-	padding: 75px 0;
-	line-height: 50px;
-}
-.displayBlue h1{
-	color: #fff;
-	font-size: 32px;
-	font-weight: 400;
-}
+	.mainDisplay{
+		background-color: #ecf0f1;
+	}
+	/*文本组件*/
+	.displayText{
+		margin-bottom: 100px;
+	}
+	/*案例展示*/
+	.displayAni{
+		width: 100%;
+		height: auto;
+	}
+	.displayAni ul{
+		padding: 15px 0;
+	}
+	/*瀑布流*/
+	.water{
+		width:100%;
+		/*height: 3000px;*/
+		overflow: hidden;
+	}
+	.waterfall-wrapper{
+	    width: 88%;
+	    /*height:2000px;*/
+	    /*background-color: pink;*/
+	    margin: 0 auto;
+	  }
+	  ul {
+	    width:360px;
+	    margin: 0 17.5px;
+	  }
+
+	  ul.left-waterfall {
+	    width:360px;
+	    float: left;
+	  }
+	  ul.center-waterfall{
+	    float: left;
+	  }
+	  ul.right-waterfall {
+	    float: left;
+	  }
+
+	  li.item {
+	    width: 360px;
+	  }
+	/*分页*/
+	.pagings{
+		height: 150px;
+		/*background-color: green;*/
+		width:88%;
+		margin:0 auto;
+		padding-left: 22px;
+	}
+	/*蓝色栏*/
+	.displayBlue{
+		width:100%;
+		height: 50px;
+		background-color: #1dcfd1;
+		padding: 75px 0;
+		line-height: 50px;
+	}
+	.displayBlue h1{
+		color: #fff;
+		font-size: 32px;
+		font-weight: 400;
+	}
 </style>

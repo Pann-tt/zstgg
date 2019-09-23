@@ -15,7 +15,7 @@
 		<!-- 动画组件二 -->
 		<div class="homeTwoAni">
 			<ul>
-				<li v-for="homeitem in displayImg" :key="homeitem.id">
+				<li v-for="homeitem in allproductList" :key="homeitem.id">
 					<my-secodAnimation :homeitem='homeitem'/></my-secodAnimation>
 				</li>
 			</ul>
@@ -44,16 +44,25 @@ export default {
 
   data() {
     return {
-    	displayImg:[
-    		{id:1,imgSrc:require('../../assets/images/secondAni1.jpg'),text:"UI不是对立而是共生"},
-	        {id:2,imgSrc:require('../../assets/images/secondAni2.jpeg'),text:"好想立刻跳进海里，全世界最大的游泳池"},
-	        {id:3,imgSrc:require('../../assets/images/secondAni3.jpg'),text:"从摄影的角度看世界"},
-	        {id:4,imgSrc:require('../../assets/images/secondAni4.jpg'),text:"那些色彩纷呈的导向页"},
-    	],
+    	allproductList:[],
     	title:"新闻中心",
-    	des:"Latest News"
+    	des:"Latest News",
     };
   },
+  	methods:{
+  		getallproductList(){
+	      	this.$http.allproductList()
+	      	.then(res=>{
+	        	this.allproductList=res.results;
+				console.log(this.allproductList);
+	      	}).catch(err=>{
+	        	console.log(err);
+	      	})
+	    },
+  	},
+  	created(){
+    	this.getallproductList();
+  	},
 };
 </script>
 
@@ -79,6 +88,7 @@ export default {
 .homeTwoAni{
 	width: 100%;
 	height: 260px;
+	overflow: hidden;
 }
 .homeTwoAni>ul{
 	width: 100%;

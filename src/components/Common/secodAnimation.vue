@@ -1,13 +1,13 @@
 <template>
 	<div class="secodAni">
 		<div class="sAbgImg" @mouseenter="sAenter" @mouseleave="sAleave">
-			<img :src="homeitem.imgSrc">
+			<img :src="homeitem.img">
 			<!-- 上半部分 -->
 			<transition name="el-zoom-in-top">
         		<div v-show="sAshow" class="transition-box sAmaskOne">
         			<div class="cycleLinkTop">
-        				<span class="iconfont">&#xe627;</span>
-        				<span class="iconfont">&#xe62b;</span>
+<!--         				<span class="iconfont">&#xe6bc;</span> -->
+        				<span class="iconfont" @click="getdetail(homeitem.id)">&#xe627;</span>
         			</div>
         		</div>
       		</transition>
@@ -15,7 +15,7 @@
 			<transition name="el-zoom-in-bottom">
         		<div v-show="sAshow" class="transition-box sAmaskTwo">
         			<div class="cycleLinkBottom">
-        				<p>{{homeitem.text}}</p>
+        				<p>{{homeitem.title}}</p>
         				<p>网页设计</p>
         			</div>
         		</div>
@@ -35,6 +35,7 @@ export default {
     };
   },
   props:["homeitem"],
+  
   methods:{
   	sAenter(){
   		this.sAshow=true;
@@ -43,8 +44,18 @@ export default {
   	sAleave(){
   		this.sAshow=false;
   		 event.stopPropagation(); 
-  	}
-  },
+  	},
+  	getdetail(id){
+		console.log(id);
+	  	this.$router.push({
+		    name:'DisplayDetail',
+		    params:{
+	          	newsId:id,
+	        }
+       	})
+  	},
+  }
+
 };
 </script>
 
@@ -103,6 +114,7 @@ export default {
 		text-align: center;
 		line-height: 40px;
 		cursor: pointer;
+		font-size: 20px;
 	}
 	.cycleLinkTop span:hover{
 		background-color: #1dcfd1;

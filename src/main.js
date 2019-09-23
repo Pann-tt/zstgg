@@ -19,8 +19,15 @@ import 'element-ui/lib/theme-chalk/display.css';
 //调用插件
 Vue.use(ElementUI);
 
+import moment from 'moment'    
+Vue.prototype.moment=moment;
+
 // 引入icon图标
 import './fonts.css'
+import store from '../src/store/index.js'
+
+import Viewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
 
 // 引入瀑布流式布局
 import Waterfall from 'vue-waterfall/lib/waterfall'
@@ -64,10 +71,6 @@ Vue.component('my-FirstNew',FirstNew);
 //引入脚部
 import Footer from "@/components/Common/Footer.vue"
 Vue.component('Footer',Footer);
-
-//引入瀑布流组件
-import waterfall from "./components/Common/waterfall.vue"
-Vue.component('my-waterfall',waterfall);
 //引入侧边栏
 import slide from "./components/Common/slide.vue"
 Vue.component('my-slide',slide);
@@ -82,6 +85,7 @@ Vue.config.productionTip = false
 new Vue({
   	el: '#app',
   	router,
+    store,
   	components:{ 
   		App,
   		Waterfall,

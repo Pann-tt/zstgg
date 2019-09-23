@@ -1,29 +1,29 @@
 <template>
 	<div class="thirdAni">
 		<div class="topImg" @mouseenter="enterPic" @mouseleave="leavePic">
-			<img :src="item.imgSrc" ref="getheight">
+			<img :src="item.img" ref="getheight">
 			<div class="thirdMask" v-if="bgcshow">
 				<div class="picLink">
-					<span class="iconfont" @click="openbigger">&#xe6bc;</span>
-					<span class="iconfont" @click="getdetail">&#xe6bc;</span>
+					<span class="iconfont" @click="openbigger(item.id)">&#xe6bc;</span>
+					<span class="iconfont" @click="getdetail(item.id)">&#xe627;</span>
 				</div>
 			</div>
 		</div>
 		<div class="bigBGC"  @touchmove.prevent v-if="bigshow">
-			<div class="openbig" :style="style">
+			<div class="openbig(item.id)" :style="style">
 				<div class="imgDetail">
-					<img id="pict" src="../../assets/images/left1.jpg" title="image 1 of 9">
+					<img id="pict" :src="item.img" :title="title" />
 					<div v-if="BtnShow">
-						<button id="prev" @click="prve" v-if="prveShow">上一张</button>
-						<button id="next" @click="next" v-if="nextShow">下一张</button>
+						<button id="prev" class="iconfont" @click="prve" v-if="prveShow">&#xe665;</button>
+						<button id="next" class="iconfont" @click="next" v-if="nextShow">&#xe666;</button>
 					</div>
-					<p><span class="iconfont" @click="closebig">&#xe673;</span></p>
+					<p><span class="iconfont" @click="closebig">&#xe658;</span></p>
 				</div>
 			</div>
 		</div>
 		<div class="Bottomtext">
-			<a href="#" class="title">{{item.text}}</a>
-			<a href="#" class="text">对于网站来说,公司设计团队完善UI的目的通常都是</a>
+			<a href="#" class="title">{{item.title}}</a>
+			<a href="#" class="text">{{item.desc}}</a>
 		</div>
 	</div>
 </template>
@@ -35,7 +35,9 @@ export default {
 
   	data() {
    	 	return {
-   	 		i:1,
+   	 		title:"",
+   	 		picture:'',
+   	 		i:'',
    	 		prveShow:false,
    	 		nextShow:true,
    	 		BtnShow:true,
@@ -45,6 +47,7 @@ export default {
         		height:'',
         		width:'',
       		},
+      		length:0,
     	};
   	},
   	mounted () {
@@ -52,8 +55,9 @@ export default {
        	 	// 获取窗口宽度*图片的比例，定义页面初始的轮播图高度
         	this.style.height = document.documentElement.clientHeight+'px';
         	this.style.width = document.documentElement.clientWidth+'px';
-        	console.log(this.style.width);
+        	// console.log(this.style.width);
     	});
+    	this.title=`image ${this.item.id} of 9`;
   	},
   	methods:{
 		enterPic(){
@@ -62,12 +66,21 @@ export default {
 		leavePic(){
 			this.bgcshow=false;
 		},
-		openbigger(){
+		openbigger(id){
+			this.i=id-1;
+			console.log("diyici");
+			console.log(this.i);
 			this.bigshow=true;
+			if(this.i>0){
+				this.prveShow=true;
+			}else if(this.i==length){
+				this.nextShow=true;
+			}
 
+			//禁止页面滑动
 			var mo=function(e){e.preventDefault();};
 	      	document.body.style.overflow='hidden';
-	      	document.addEventListener("touchmove",mo,false);//禁止页面滑动
+	      	document.addEventListener("touchmove",mo,false);
 		},
 		closebig(){
 			this.bigshow=false;
@@ -76,9 +89,13 @@ export default {
         	document.body.style.overflow='';//出现滚动条
         	document.removeEventListener("touchmove",mo,false);
 		},
-		getdetail(){
+		getdetail(id){
+			console.log(id);
 	  		this.$router.push({
 		        name:'DisplayDetail',
+		        params:{
+	          		newsId:id,
+	          	}
         	})
   		},
   		next(){
@@ -86,10 +103,12 @@ export default {
 			var nextBtn=document.getElementById("next");
 			var prevBtn=document.getElementById("prev");
 			//2.绑定事件
-			var max=2,min=1;
-			if(this.i<max){
+
+			this.length=this.productList.length;
+
+			if(this.i<this.length-1){
 				this.i++;
-				if(this.i==max){
+				if(this.i==this.length-1){
 					this.nextShow=false;
 				}
 			}else{
@@ -97,30 +116,32 @@ export default {
 			}
 			this.prveShow=true;
 			//事件驱动程序
-			pict.src=require(`../../assets/images/left${this.i}.jpg`);
-		
+			console.log(this.i)
+			pict.src=this.productList[this.i].img;
   		},
   		prve(){
 	  		var pict=document.getElementById("pict");
 			var nextBtn=document.getElementById("next");
 			var prevBtn=document.getElementById("prev");
 			//2.绑定事件
-			var max=2,min=1;
-			if(this.i>min){
+			if(this.i>0){
 				this.i--;
-				if(this.i=min){
+				console.log("dierci");
+				console.log(this.i);
+				if(this.i==0){
 					this.prveShow=false;
-				}			
+				}	
 			}else{
 				this.prveShow=false;
 			}
 			this.nextShow=true;
 			//事件驱动程序
-			pict.src=require(`../../assets/images/left${this.i}.jpg`);
+			console.log(this.i)
+			pict.src=this.productList[this.i].img;
   		}
 	},
 
-	props:["item","item","item"]
+	props:["item","productList"]
 };
 </script>
 
