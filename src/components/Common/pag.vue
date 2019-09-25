@@ -6,9 +6,9 @@
 			@next-click="next(page)"
 	      	@current-change="handleCurrentChange"
 	      	:current-page.sync="$store.state.page"
-	      	:page-size="5"
+	      	:page-size="long"
 	      	layout="prev, pager, next, jumper"
-	      	:total="11">
+	      	:total="allpages">
 	    </el-pagination>
 	</div>
 </template>
@@ -17,7 +17,7 @@
 export default {
 
   name: 'pag',
-  props:['pages'],
+  props:['allpages',"long"],
   data() {
     return {
     	page:1,
@@ -36,14 +36,14 @@ export default {
       	prve(page){
       		this.page--;
       		this.$store.commit('ispage',this.page)
-      		console.log(this.$store.state.page)
+      		// console.log(this.$store.state.page)
       		this.$parent.getproductList(this.page);
 
       	},
       	next(page){
 	      	this.page++;
 	      	this.$store.commit('ispage',this.page)
-	      	console.log(this.$store.state.page)
+	      	// console.log(this.$store.state.page)
 	      	this.$parent.getproductList(this.page);
       	},
   	},

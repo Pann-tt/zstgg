@@ -23,7 +23,7 @@
 		<!--蓝色条条 -->
 		<div class="blueLine">
 			<div class="container">
-				<p>www.baidu.com</p>
+				<p>www.zhishangpark.com</p>
 				<h1>智慧城市运营商</h1>
 				<p>公司将充分利用珠三角众多湘籍深圳高科技企业人士的技术、产品、资金等各方资源，致力于以长、株、潭为核心的湖南智慧城市建设。</p>
 			</div>

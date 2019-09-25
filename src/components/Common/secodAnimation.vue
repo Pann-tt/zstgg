@@ -46,7 +46,7 @@ export default {
   		 event.stopPropagation(); 
   	},
   	getdetail(id){
-		console.log(id);
+		// console.log(id);
 	  	this.$router.push({
 		    name:'DisplayDetail',
 		    params:{

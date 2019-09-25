@@ -68,8 +68,6 @@ export default {
 		},
 		openbigger(id){
 			this.i=id-1;
-			console.log("diyici");
-			console.log(this.i);
 			this.bigshow=true;
 			if(this.i>0){
 				this.prveShow=true;
@@ -90,7 +88,6 @@ export default {
         	document.removeEventListener("touchmove",mo,false);
 		},
 		getdetail(id){
-			console.log(id);
 	  		this.$router.push({
 		        name:'DisplayDetail',
 		        params:{
@@ -116,7 +113,6 @@ export default {
 			}
 			this.prveShow=true;
 			//事件驱动程序
-			console.log(this.i)
 			pict.src=this.productList[this.i].img;
   		},
   		prve(){
@@ -126,8 +122,6 @@ export default {
 			//2.绑定事件
 			if(this.i>0){
 				this.i--;
-				console.log("dierci");
-				console.log(this.i);
 				if(this.i==0){
 					this.prveShow=false;
 				}	
@@ -136,7 +130,6 @@ export default {
 			}
 			this.nextShow=true;
 			//事件驱动程序
-			console.log(this.i)
 			pict.src=this.productList[this.i].img;
   		}
 	},
@@ -219,7 +212,10 @@ export default {
 		text-align: center;
 		margin-bottom: 10px;
 	}
-	.thirdAni .Bottomtext p:hover{
+	.thirdAni .Bottomtext .title{
+		cursor: pointer;
+	}
+	.thirdAni .Bottomtext .title:hover{
 		color:#1dcfd1;
 	}
 	.thirdAni .Bottomtext .title{

@@ -56,7 +56,7 @@ export default {
     	}
   	},
   	created(){
-  		console.log(this.$store.state.isname);
+  		// console.log(this.$store.state.isname);
   		for(let i=0;i<4;i++){
 	     	if(this.$store.state.isname==this.Headerlist[i].name){
 	     		this.bgcAdd(i);

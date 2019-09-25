@@ -29,7 +29,7 @@
 		</div>
 		<!-- 分页 -->
 		<div class="pagings">
-			<my-pag ></my-pag>
+			<my-pag :allpages="allpages" :long="long"></my-pag>
 		</div>
 		<!-- 蓝色栏 -->
 		<div class="displayBlue">
@@ -55,6 +55,8 @@ export default {
 	    page:1,
 	    id:0,
 	    newsId:0,
+	    allpages:0,
+	    long:0,
     };
   },
   	methods:{
@@ -63,6 +65,8 @@ export default {
 	      	this.$http.productList(this.$store.state.page)
 	      	.then(res=>{
 	        	this.productList=res.results;
+	        	this.allpages=res.count;
+	        	this.long=res.results.length;
 	        	var length=this.productList.length;
             	//将数据一个一个依次分配给三个数组
             	this.leftItems=[];

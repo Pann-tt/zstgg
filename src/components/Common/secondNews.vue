@@ -2,7 +2,7 @@
 	<div class="secondNew">
 		<!-- 标题 -->
 		<div class="title">
-			<h1><a href="#" v-html='subItem.title'></a></h1>
+			<h1 @click='enterNewsDetail(subItem.id)' v-html='subItem.title'></h1>
 		</div>
 		<!-- 时间 -->
 		<div class="date">
@@ -54,11 +54,12 @@ export default {
 	.secondNew .title{
 		width: 100%;
 	}
-	.secondNew .title a{
+	.secondNew .title h1{
 		color:#45464b;
 		font-weight: normal;
+		cursor: pointer;
 	}
-	.secondNew .title a:hover{
+	.secondNew .title h1:hover{
 		color: #1dcfd1;
 	}
 	/*时间*/
