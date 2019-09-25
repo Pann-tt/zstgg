@@ -12,6 +12,7 @@ const store = new Vuex.Store({
 		//创建一个对象用于存储信息
 		page:1,
 		pageId:1,
+		isname:"",
 	},
 	//修改状态的唯一方法是提交mutations
 	mutations:{
@@ -21,6 +22,9 @@ const store = new Vuex.Store({
 		isPage(state,val){
 		   state.pageId=val;
 		},
+		isName(state,val){
+			state.isname=val;
+		}
 	},
 	actions:{
 		

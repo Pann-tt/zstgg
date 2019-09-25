@@ -93,6 +93,13 @@ Vue.component('my-DisplayDetail',DisplayDetail);
 
 Vue.config.productionTip = false
 
+router.beforeEach((to, from, next) => {
+  console.log(to.name);
+  store.commit('isName',to.name);
+
+  next();
+})
+
 /* eslint-disable no-new */
 new Vue({
   	el: '#app',

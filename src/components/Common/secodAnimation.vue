@@ -15,7 +15,7 @@
 			<transition name="el-zoom-in-bottom">
         		<div v-show="sAshow" class="transition-box sAmaskTwo">
         			<div class="cycleLinkBottom">
-        				<p>{{homeitem.title}}</p>
+        				<p @click="getdetail(homeitem.id)">{{homeitem.title}}</p>
         				<p>网页设计</p>
         			</div>
         		</div>

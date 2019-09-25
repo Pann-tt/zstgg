@@ -22,8 +22,8 @@
 			</div>
 		</div>
 		<div class="Bottomtext">
-			<a href="#" class="title">{{item.title}}</a>
-			<a href="#" class="text">{{item.desc}}</a>
+			<p class="title" @click="getdetail(item.id)">{{item.title}}</p>
+			<p class="text">{{item.desc}}</p>
 		</div>
 	</div>
 </template>
@@ -213,13 +213,13 @@ export default {
 		text-align: center;
 		padding:40px 20px;
 	}
-	.thirdAni .Bottomtext a{
+	.thirdAni .Bottomtext p{
 		width: 100%;
 		display: block;
 		text-align: center;
 		margin-bottom: 10px;
 	}
-	.thirdAni .Bottomtext a:hover{
+	.thirdAni .Bottomtext p:hover{
 		color:#1dcfd1;
 	}
 	.thirdAni .Bottomtext .title{
@@ -245,6 +245,7 @@ export default {
 		border: 5px solid #fff;
 		border-radius: 10px;
 		max-height: 488px;
+		min-height: 300px;
 		margin: 0 auto;
 	}
 	.imgDetail button{

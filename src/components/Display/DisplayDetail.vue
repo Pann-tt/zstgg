@@ -51,9 +51,10 @@ export default {
 
   data() {
     return {
+    	length:1,
     	newsId:0,
     	productDetail:[],
-    	i:1,
+    	i:0,
     	BtnShow:false,
     	prveShow:false,
     	nextShow:true,
@@ -75,9 +76,9 @@ export default {
 		var nextBtn=document.getElementById("next");
 		var prevBtn=document.getElementById("prev");
 		//2.绑定事件
-		if(this.i<length){
+		if(this.i<this.length){
 			this.i++;
-			if(this.i==length){
+			if(this.i==this.length-1){
 				this.nextShow=false;
 			}
 		}else{
@@ -85,6 +86,7 @@ export default {
 		}
 		this.prveShow=true;
 		//事件驱动程序
+		// console.log(this.i);
 		pict.src='http://'+this.productDetail.images[this.i].url;
   	},
   	prve(){
@@ -94,7 +96,7 @@ export default {
 		//2.绑定事件
 		if(this.i>0){
 			this.i--;
-			if(this.i=0){
+			if(this.i==0){
 				this.prveShow=false;
 			}			
 		}else{
@@ -112,9 +114,14 @@ export default {
       	.then(res=>{
 	        this.productDetail=res;
 	        this.length= this.productDetail.images.length;
+	        // console.log(this.length);
+	        if(this.length==1){
+	        	this.prveShow=false;
+	        	this.nextShow=false;
+	        }
 	        this.picone='http://'+this.productDetail.images[0].url;
 
-	        console.log(this.picone);
+	        // console.log(this.i);
       	})
       	.catch(err=>{
         	console.log(err);

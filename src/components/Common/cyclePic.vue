@@ -2,8 +2,8 @@
 	<div class="slide">
 		<el-carousel :interval="5000" arrow="always">
 	    	<el-carousel-item v-for="Item in cyclePicture" :key="Item.id">
-	    		<img :src="Item.img">
-	    		<h2>{{Item.title}}</h2>
+	    		<img :src="Item.img" class="bmp" style="height:680px;width:100%">
+	    		<h2 class="htitle">{{Item.title}}</h2>
 	    	</el-carousel-item>
   		</el-carousel>
 	</div>
@@ -54,12 +54,16 @@ export default {
   .slide{
   	position: relative;
   }
-  h2{
+  .htitle{
   	position: absolute;
   	width: 100%;
   	text-align: center;
-  	top: 40%;
-  	color: #fff;
+  	top: 55%;
+  	color:#fff;
   	font-size: 50px;
+  }
+  .el-carousel-item .bmp{
+    height:680px;
+    width:100%;
   }
 </style>
