@@ -31,7 +31,6 @@ export default {
 		    ],
 		    current:0,
 		    show:false,
-		    index:0,
       	};
     },
     methods:{
@@ -39,9 +38,6 @@ export default {
     		this.$store.state.pageId=1;
       		this.current=index;
       		this.$store.state.page=1;
-
-      		console.log(this.$store.state.isname);
-
     	},
     },
     watch:{
@@ -58,6 +54,20 @@ export default {
 	     		}
 	     	}
     	}
+  	},
+  	created(){
+  		console.log(this.$store.state.isname);
+  		for(let i=0;i<4;i++){
+	     	if(this.$store.state.isname==this.Headerlist[i].name){
+	     		this.bgcAdd(i);
+	     	}
+	     }
+	     if(this.$store.state.isname=="DisplayDetail"){
+	     		this.bgcAdd(1);
+	     	}
+	     	if(this.$store.state.isname=="NewsDetail"){
+	     		this.bgcAdd(2);
+	     	}
   	}
 };
 </script>
