@@ -26,7 +26,6 @@ export default {
         this.$http.cyclePicture()
         .then(res=>{
             this.cyclePicture=res;
-            console.log(this.cyclePicture);
         }).catch(err=>{
             console.log(err);
         })

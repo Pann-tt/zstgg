@@ -129,6 +129,6 @@ export default {
 	color: rgb(51,51,51);
 }
 .nav-right ul li a:hover{
-	color:rgb(60,111,160);
+	color: #1dcfd1;
 }
 </style>

@@ -145,7 +145,6 @@ export default {
   		this.$http.NewsDetail(1)
   		.then(res=>{	
   			this.recommend=res.recommend_list; 		
- 			console.log(this.recommend);
   		})
   		.catch(err=>{
   			console.log(err);
@@ -155,11 +154,8 @@ export default {
   	getNews(){
   		this.$http.News(this.categoryId,this.$store.state.pageId)
       .then(res=>{
-        console.log(res);
         this.pages=res;
         this.news=res.results; 
-        console.log(this.news); 
-        console.log(this.pages); 
       }).catch(err=>{
         console.log(err);
       })
@@ -168,7 +164,6 @@ export default {
 	      	this.$http.allproductList()
 	      	.then(res=>{
 	        	this.allproductList=res.results;
-				console.log(this.allproductList);
 	      	}).catch(err=>{
 	        	console.log(err);
 	      	})

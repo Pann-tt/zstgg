@@ -14,8 +14,8 @@
 				<div class="sideright">
 					<div class="relaside">
 						<h4>相关栏目</h4>
-						<div><p>公司新闻</p><i class="iconfont">&#xe656;</i><br/></div>
-						<div><p>行业新闻</p><i class="iconfont">&#xe656;</i><br/></div>
+						<div @click='CompanyNews'><p>公司新闻</p><i class="iconfont">&#xe656;</i><br/></div>
+						<div @click='IndustryNews'><p>行业新闻</p><i class="iconfont">&#xe656;</i><br/></div>
 						<div @click='BackNews'><p>最新动态</p><i class="iconfont">&#xe656;</i></div>
 					</div>
 					<div class="hotnews">
@@ -79,6 +79,9 @@ export default {
     	newsId:1,
     	recommend:{},
     	newNews:{},
+    	news:{},
+    	pages:{},
+    	categoryId:'',
     };
   },
   methods:{
@@ -95,7 +98,29 @@ export default {
   	BackNews(){
   		this.$router.push({
         name:"News",
-       })
+       });
+  		this.titleone='最新动态';
+  		this.categoryId='';
+  		this.$store.state.pageId=1;
+  		this.getNews(this.categoryId,this.$store.state.pageId);
+  	},
+  	CompanyNews(){
+  		this.$router.push({
+        name:"News",
+       });
+  		this.titleone='公司新闻'; 		
+  		this.categoryId=1;
+  		this.$store.state.pageId=1;
+  		this.getNews(this.categoryId,this.$store.state.pageId);
+  	},
+  	IndustryNews(){
+  		this.$router.push({
+        name:"News",
+       });
+  		this.titleone='行业新闻';
+  		this.categoryId=2;
+  		this.$store.state.pageId=1;
+  		this.getNews(this.categoryId,this.pageId);
   	},
   	enterNewsDetail(id){
   		this.$router.push({
@@ -127,11 +152,20 @@ export default {
   			console.log(err);
   		})
   	},
+  	// 获取分类新闻信息
+  	getNews(){
+  		this.$http.News(this.categoryId,this.$store.state.pageId)
+      .then(res=>{
+        this.pages=res;
+        this.news=res.results; 
+      }).catch(err=>{
+        console.log(err);
+      })
+  	},
   	getallproductList(){
 	      	this.$http.allproductList()
 	      	.then(res=>{
 	        	this.allproductList=res.results;
-				console.log(this.allproductList);
 	      	}).catch(err=>{
 	        	console.log(err);
 	      	})
@@ -147,6 +181,7 @@ export default {
   	},
   },
   created(){
+  	this.getNews();
     this.getNewsDetail();
     this.getAllNews();
     this.getallproductList();

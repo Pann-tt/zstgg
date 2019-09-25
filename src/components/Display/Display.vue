@@ -64,8 +64,6 @@ export default {
 	      	.then(res=>{
 	        	this.productList=res.results;
 	        	var length=this.productList.length;
-
-            	console.log(length);
             	//将数据一个一个依次分配给三个数组
             	this.leftItems=[];
 	    	this.centerItems=[];
