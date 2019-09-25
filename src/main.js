@@ -76,9 +76,6 @@ Vue.component('my-SecondText',SecondText);
 // 引入新闻组件一
 import FirstNew from '@/components/Common/FirstNew.vue' 
 Vue.component('my-FirstNew',FirstNew);
-//引入新闻右边组件
-import NewsRight from '@/components/Common/NewsRight.vue' 
-Vue.component('my-NewsRight',NewsRight);
 
 //引入脚部
 import Footer from "@/components/Common/Footer.vue"
