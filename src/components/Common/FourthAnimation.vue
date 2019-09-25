@@ -29,7 +29,6 @@ export default {
 	      	this.$http.allproductList()
 	      	.then(res=>{
 	        	this.allproductList=res.results;
-				console.log(this.allproductList);
 	      	}).catch(err=>{
 	        	console.log(err);
 	      	})

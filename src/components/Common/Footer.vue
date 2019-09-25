@@ -134,11 +134,20 @@ export default {
 	.footouter .lefttwo .down p{
 		margin:20px 0;
 	}
+	.footouter .righttwo{
+		margin-right: 25px;
+	}
 	.footouter .righttwo h5{
 		margin-bottom:25px;
 	}
 	.footouter .righttwo .title{
-		margin-bottom:15px;
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-line-clamp:1;
+	    -webkit-box-orient: vertical;
+		
+		margin-bottom:17px;
 		cursor: pointer;
 	}
 	.footouter .righttwo .title:hover{
@@ -150,7 +159,7 @@ export default {
 	}
 	.footouter .righttwo .dynamic{
 		margin-top: 10px;
-		padding-bottom:20px;
+		padding-bottom:15px;
 		border-bottom:1px solid rgb(69,70,75);
 	}
 	.footouter .bottom{

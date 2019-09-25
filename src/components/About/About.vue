@@ -5,7 +5,7 @@
 		<div class="produce">
 			<!-- 左边图片 -->
 			<div class="produceimg">
-				<img src="../../assets/images/about_us_intro.jpg">
+				<img src="../../assets/images/aboutus1.jpg">
 			</div>
 			<!-- 右边文字 -->
 			<div class="producetext">
@@ -31,9 +31,9 @@
 				在智尚科技的未来发展中，将以株洲的智慧社区等项目建设为起点，通过建设示范，逐步推进智慧旅游、智慧交通、智慧校园、智慧医疗等等项目的开发建设，逐步形成一套行之有效、持续运营的智慧城市运营体系，进而以株洲为智慧城市运营样板，以深圳为营销基地，向全国推广运营模式，成为国内领先的智慧城市运营商。
 			</div>
 			<!-- 右边图片 -->
-			<div class="goalimg">
-				<img src="../../assets/images/goal3.jpg">
-			</div>
+			<!-- <div class="goalimg">
+				<img src="../../assets/images/goal7.jpg">
+			</div> -->
 		</div>
 		<div class="bottomtab">
 			<div class="english">Smart City Operator</div>
@@ -101,11 +101,11 @@ export default {
 	}
 	.goal .goaltext{
 		/*cursor: pointer;*/
-		font-size: 18px;
-		display:inline-block;
-		width:400px;
-		margin:35px 100px;
-		line-height: 30px;
+		font-size: 22px;
+		display: inline-block;
+		/* width: 400px; */
+		margin: 35px 200px;
+		line-height: 39px;
 		/*transition:all 1.5s ease;*/
 	}
 	/*.goal .goaltext:hover{
@@ -132,7 +132,7 @@ export default {
 		height: 100%;
 	}
 	.bottomtab{
-		background:url(../../assets/images/cta_parallax.jpg) no-repeat fixed  0 0; 
+		background:url(../../assets/images/cta1.jpg) no-repeat fixed  0 0; 
 		 background-position: center center;
 		 background-size: cover;
 		height: 400px;
