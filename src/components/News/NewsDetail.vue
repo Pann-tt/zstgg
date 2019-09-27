@@ -193,6 +193,163 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){
+	.newscontent{
+		padding-top: 70px;
+		padding-bottom: 50px;
+		background-color: rgb(245,249,250);
+	}
+	.newscontent .container{
+		width:100%;
+	}
+	.newscontent .newdetail{
+		padding: 35px;
+	    width: 275px;
+	    margin: 25px 15px;
+		background-color: #fff;
+	}
+	.newscontent .newdetail .heading{
+		font-size: 35px;
+		font-weight: 500;
+		margin-bottom: 10px;
+	}
+	.newscontent .newdetail span{
+		color: #C1C1C1;
+		font-size: 14px;
+	}
+	.newscontent .newdetail p{
+		margin:30px 0;
+		color: #969595;
+		font-size: 16px;
+		line-height: 35px;
+	}
+	.newscontent .container{
+		height: auto;
+	}
+	.newscontent .container::after{
+		content:'';
+		clear: both;
+		display: block;
+	}
+	.newscontent .sideright{
+		margin: 25px 30px 70px 16px;
+	    width: 344px;
+	}
+	.newscontent .sideright .relaside{
+		background-color: #fff;
+		padding:20px;
+		height: 195px;
+	}
+	.newscontent .sideright .relaside h4{
+		margin:10px 0;
+		font-size: 18px;
+		font-weight: 500;
+	}
+	.newscontent .sideright .relaside div{
+		padding:14px 0;
+		border-bottom: 1px solid #ececec;
+		color:#B9B9B9 ;
+	}
+	.newscontent .sideright .relaside p{
+		display: inline-block;
+		cursor: pointer;
+	}
+	.newscontent .sideright .relaside p:hover{
+		color:rgb(29,207,209);
+	}
+	.newscontent .sideright .relaside i{
+		float: right;
+	}
+	.newscontent .sideright .hotnews{
+		margin-top:40px;
+		background-color: #fff;
+		padding:20px;
+		height: 315px;
+	}
+	.newscontent .sideright .hotnews .headline{
+		font-size: 18px;
+		margin: 20px 0 35px 0;
+	}
+	.newscontent .sideright .hotnews .headline span{
+		cursor: pointer;
+	}
+	.newscontent .sideright .hotnews .headline span:hover{
+		color: rgb(29,207,209);
+	}
+	.newscontent .sideright .hotnews .headline .one{
+		padding:16px 36px;
+		background-color:rgb(236,240,241);
+		border-radius: 8px;
+	}
+	.newscontent .sideright .hotnews .headline .two{
+		padding:16px 36px;
+		border-radius: 8px;
+	}
+	.newscontent .sideright .hotnews .xinnews,.renews{
+		margin-top: 15px;
+	}
+	.newscontent .sideright .hotnews .dynamic{
+		margin-top: 10px;
+		padding-bottom:20px;
+		border-bottom:1px solid #BFBFBF;
+		color: #BFBFBF;
+	}
+	.newscontent .sideright .hotnews .dynamic .title{
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-line-clamp:1;
+	    -webkit-box-orient: vertical;
+		margin-bottom:10px;
+		cursor: pointer;
+	}
+	.newscontent .sideright .hotnews .dynamic .title:hover{
+		color: rgb(29,207,209);
+	}
+	.newscontent .sideright .hotnews .dynamic span{
+		font-size: 12px;
+	}
+	.newscontent .sideright .fourAni{
+		width:304px;
+		margin-top:40px;
+		background-color: #fff;
+		padding:20px;
+		height: 205px;
+	}
+	.newscontent .sideright	.fourAni{
+		display: inline-block;
+	}
+	.newscontent .sideright .fourAni .title{
+		font-size: 18px;
+		font-weight: 450;
+		margin-bottom: 25px;
+	}
+	.newscontent .sideright .fourAni .productimg li{
+		position: relative;
+		display: inline-block;
+		width:65px;
+		height: 65px;
+		cursor: pointer;
+		margin-right: 4px;
+	}
+	.newscontent .sideright .fourAni .productimg li .mask{
+		position: absolute;
+		top:0;
+		width:65px;
+		height: 65px;
+	}
+	.newscontent .sideright .fourAni .productimg img{
+		overflow: hidden;
+		width:65px;
+		height: 65px;
+	}
+	.newscontent .sideright .fourAni .productimg li:hover .mask{
+		background-color: rgba(50,50,50,.5);
+	}
+}
+/*其他*/
+@media screen and (min-width: 768px){
 	.newscontent{
 		padding-top: 70px;
 		padding-bottom: 50px;
@@ -349,4 +506,5 @@ export default {
 	.newscontent .sideright .fourAni .productimg li:hover .mask{
 		background-color: rgba(50,50,50,.5);
 	}
+}
 </style>

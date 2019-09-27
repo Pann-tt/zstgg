@@ -59,6 +59,104 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){
+	.produce{
+		font-size: 0px;
+	}
+	.produce .produceimg,.produce .producetext{
+		display: inline-block;
+	}
+	.produce .produceimg{
+		width: 375px;
+    	height: 480px;
+		overflow: hidden;
+	}
+	.produce .produceimg img{
+		width:auto;
+		height: 100%;
+		display: block;
+	}
+	.produce .producetext{
+		margin: 50px 38px 12px 38px;
+		width:300px;
+	}
+	.produce .producetext .title{
+		font-size:28px ;
+	}
+	.produce .producetext p{
+		margin:20px 0;
+		line-height: 30px;
+		font-size: 16px;
+		color: rgb(152,162,164);
+	}
+	.produce .producetext .reach i{
+		font-size: 18px;
+		font-weight: 600;
+		color:  rgb(29,207,209);
+	}
+	.goal{
+		padding-top: 12px;
+		height: 660px;
+		background-color: rgb(236,240,241);
+	}
+	.goal .goaltext{
+		font-size: 19px;
+		display: inline-block;
+		margin: 0 38px;
+		line-height: 39px;
+		/*transition:all 1.5s ease;*/
+	}
+	/*.goal .goaltext:hover{
+		color:#fff;
+		animation:Glow 1s ease infinite alternate;
+	}
+	@keyframes Glow {
+		from {
+		text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,0 0 40px #00a67c,0 0 70px #00a67c,0 0 80px #00a67c,0 0 100px #00a67c,0 0 150px #00a67c;
+		}
+		to {
+			text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #00a67c,0 0 35px #00a67c,0 0 40px #00a67c,0 0 50px #00a67c,0 0 75px #00a67c;
+		}
+	}*/
+	.goal .goalimg{
+		display:inline-block;
+		width:668px;
+		height: 340px;
+		overflow: hidden;
+		float: right;
+	}
+	.goal .goalimg img{
+		width:auto;
+		height: 100%;
+	}
+	.bottomtab{
+		background:url(../../assets/images/cta1.jpg) no-repeat fixed  0 0; 
+		 background-position: center center;
+		 background-size: cover;
+		height: 385px;
+		text-align: center;
+	}
+	.bottomtab .english,.chinese,p{
+		color: #fff;
+	}
+	.bottomtab .english{
+		font-size:18px;
+		padding-top:50px;
+
+	}
+	.bottomtab .chinese{
+		font-size:36px;
+		margin:40px 0;
+	}
+	.bottomtab p{
+		font-size: 18px;
+		margin: 0 auto;
+    	width: 90%;
+	}
+}
+/*其他*/
+@media screen and (min-width: 768px){
 	.produce{
 		font-size: 0px;
 	}
@@ -154,4 +252,5 @@ export default {
 		font-size: 20px;
 
 	}
+}
 </style>

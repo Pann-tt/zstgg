@@ -85,92 +85,193 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){
 	#oneDiv .leftone,#oneDiv .lefttwo{
-		width: 255px;
-	}
-	.footouter{
-		background-color: rgb(27,28,31);
-		height: 580px;
-		color: rgb(152,162,164);
-		font-size: 16px;
-		position: relative;
-	}
-	.footouter .leftone,.footouter .lefttwo,.footouter .righttwo,.footouter .rightone{
-		display: inline-block;
-		width:270px;
-		float: left;
-		padding: 100px 0;
-		margin:0 6px;
-	}
-	.footouter h5{
-		color: #fff;
-		font-size: 18px;
-		font-weight: 450;
-	}
-	.footouter .sp{
-		color: #fff;
-	}
-	.footouter .leftone p{
-		margin:25px 0;
-		line-height: 28px;
-		text-indent: 3px;
-	}
-	.footouter .leftone i{
-		cursor: pointer;
-		margin:0 12px;
-	}
-	.footouter .leftone i:hover{
-		color: #fff;
-	}
-	.footouter .lefttwo .up h5{
-		margin-bottom:25px;
-	}
-	.footouter .lefttwo .up p{
-		margin-bottom: 15px;
-	}
-	.footouter .lefttwo .down .sp{
-		margin-top:45px;
-	}
-	.footouter .lefttwo .down p{
-		margin:20px 0;
-	}
-	.footouter .righttwo{
-		margin-right: 25px;
-	}
-	.footouter .righttwo h5{
-		margin-bottom:25px;
-	}
-	.footouter .righttwo .title{
-		overflow: hidden;
-	    text-overflow: ellipsis;
-	    display: -webkit-box;
-	    -webkit-line-clamp:1;
-	    -webkit-box-orient: vertical;
-		
-		margin-bottom:17px;
-		cursor: pointer;
-	}
-	.footouter .righttwo .title:hover{
-		color: rgb(29,207,209);
-	}
-	.footouter .righttwo span{
-		font-size: 12px;
-		color:rgb(69,70,75);
-	}
-	.footouter .righttwo .dynamic{
-		margin-top: 10px;
-		padding-bottom:15px;
-		border-bottom:1px solid rgb(69,70,75);
-	}
-	.footouter .bottom{
-		position: absolute;
-		bottom:0;
-		background-color: rgb(22,23,26);
-		height: 100px;
-		width:100%;
-	}
-	.footouter .bottom div{
-		text-align: center;
-		line-height: 100px;
-	}
+	  width: 275px;
+	 }
+	 .footouter{
+	  background-color: rgb(27,28,31);
+	  height: 1500px;
+	  color: rgb(152,162,164);
+	  font-size: 16px;
+	  position: relative;
+	 }
+	 .footouter .leftone{
+	  display: inline-block;
+	  width:270px;
+	  float: left;
+	  padding: 100px 0 50px;
+	  margin:0 6px;
+	 }
+	 .footouter .lefttwo,.footouter .righttwo,.footouter .rightone{
+	  display: inline-block;
+	  width:270px;
+	  float: left;
+	  padding: 0px 0  50px;
+	  margin:0 6px;
+	 }
+	 .footouter h5{
+	  color: #fff;
+	  font-size: 18px;
+	  font-weight: 450;
+	 }
+	 .footouter .sp{
+	  color: #fff;
+	 }
+	 .footouter .leftone p{
+	  margin:25px 0;
+	  line-height: 28px;
+	  text-indent: 3px;
+	 }
+	 .footouter .leftone i{
+	  cursor: pointer;
+	  margin:0 12px;
+	 }
+	 .footouter .leftone i:hover{
+	  color: #fff;
+	 }
+	 .footouter .lefttwo .up h5{
+	  margin-bottom:25px;
+	 }
+	 .footouter .lefttwo .up p{
+	  margin-bottom: 15px;
+	 }
+	 .footouter .lefttwo .down .sp{
+	  margin-top:25px;
+	 }
+	 .footouter .lefttwo .down p{
+	  margin:20px 0;
+	 }
+	 .footouter .righttwo{
+	  margin-right: 25px;
+	 }
+	 .footouter .righttwo h5{
+	  margin-bottom:25px;
+	 }
+	 .footouter .righttwo .title{
+	  overflow: hidden;
+	     text-overflow: ellipsis;
+	     display: -webkit-box;
+	     -webkit-line-clamp:1;
+	     -webkit-box-orient: vertical;
+	  
+	  margin-bottom:17px;
+	  cursor: pointer;
+	 }
+	 .footouter .righttwo .title:hover{
+	  color: rgb(29,207,209);
+	 }
+	 .footouter .righttwo span{
+	  font-size: 12px;
+	  color:rgb(69,70,75);
+	 }
+	 .footouter .righttwo .dynamic{
+	  margin-top: 10px;
+	  padding-bottom:15px;
+	  border-bottom:1px solid rgb(69,70,75);
+	 }
+	 .footouter .bottom{
+	  position: absolute;
+	  bottom:0;
+	  background-color: rgb(22,23,26);
+	  height: 100px;
+	  width:100%;
+	 }
+	 .footouter .bottom div{
+	  text-align: center;
+	  line-height: 100px;
+	 }
+}	
+/*其他*/
+@media screen and (min-width: 768px){
+	#oneDiv .leftone,#oneDiv .lefttwo{
+	  width: 255px;
+	 }
+	 .footouter{
+	  background-color: rgb(27,28,31);
+	  height: 580px;
+	  color: rgb(152,162,164);
+	  font-size: 16px;
+	  position: relative;
+	 }
+	 .footouter .leftone,.footouter .lefttwo,.footouter .righttwo,.footouter .rightone{
+	  display: inline-block;
+	  width:270px;
+	  float: left;
+	  padding: 100px 0;
+	  margin:0 6px;
+	 }
+	 .footouter h5{
+	  color: #fff;
+	  font-size: 18px;
+	  font-weight: 450;
+	 }
+	 .footouter .sp{
+	  color: #fff;
+	 }
+	 .footouter .leftone p{
+	  margin:25px 0;
+	  line-height: 28px;
+	  text-indent: 3px;
+	 }
+	 .footouter .leftone i{
+	  cursor: pointer;
+	  margin:0 12px;
+	 }
+	 .footouter .leftone i:hover{
+	  color: #fff;
+	 }
+	 .footouter .lefttwo .up h5{
+	  margin-bottom:25px;
+	 }
+	 .footouter .lefttwo .up p{
+	  margin-bottom: 15px;
+	 }
+	 .footouter .lefttwo .down .sp{
+	  margin-top:45px;
+	 }
+	 .footouter .lefttwo .down p{
+	  margin:20px 0;
+	 }
+	 .footouter .righttwo{
+	  margin-right: 25px;
+	 }
+	 .footouter .righttwo h5{
+	  margin-bottom:25px;
+	 }
+	 .footouter .righttwo .title{
+	  overflow: hidden;
+	     text-overflow: ellipsis;
+	     display: -webkit-box;
+	     -webkit-line-clamp:1;
+	     -webkit-box-orient: vertical;
+	  
+	  margin-bottom:17px;
+	  cursor: pointer;
+	 }
+	 .footouter .righttwo .title:hover{
+	  color: rgb(29,207,209);
+	 }
+	 .footouter .righttwo span{
+	  font-size: 12px;
+	  color:rgb(69,70,75);
+	 }
+	 .footouter .righttwo .dynamic{
+	  margin-top: 10px;
+	  padding-bottom:15px;
+	  border-bottom:1px solid rgb(69,70,75);
+	 }
+	 .footouter .bottom{
+	  position: absolute;
+	  bottom:0;
+	  background-color: rgb(22,23,26);
+	  height: 100px;
+	  width:100%;
+	 }
+	 .footouter .bottom div{
+	  text-align: center;
+	  line-height: 100px;
+	 }
+}
 </style>

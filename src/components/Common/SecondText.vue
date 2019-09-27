@@ -24,6 +24,39 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){
+	.secouter{
+		width: 100%;
+		height: 134px;
+		background:url(../../assets/images/breadcrumbs_bg.jpg) no-repeat;
+		-webkit-background-size: auto;
+		background-size: cover;
+	}
+	.secouter .container{
+	}
+	.secouter .title{
+		width: 42%;
+	    margin: 0 auto;
+	    line-height: 91px;
+	    font-size: 32px;
+		color: #fff;
+	}
+	.secouter .right{
+		width: 43%;
+	    margin: 0 auto;
+	    line-height: 13px;
+		color: rgb(152,162,164);
+	}
+	.secouter .right span{
+		cursor: pointer;
+	}
+	.secouter .right span:hover{
+		color: rgb(29,207,209);
+	}
+}
+/*其他*/
+@media screen and (min-width: 768px){
 	.secouter{
 		width: 100%;
 		height: 150px;
@@ -48,4 +81,5 @@ export default {
 	.secouter .right span:hover{
 		color: rgb(29,207,209);
 	}
+}
 </style>
