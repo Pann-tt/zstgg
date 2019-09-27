@@ -195,7 +195,7 @@ export default {
 		background-color: rgb(245,249,250);
 	}
 	.newscontent .nnew{
-		width:740px;
+		/*width:740px;*/
 	}
 	.newscontent .news{
 		margin:25px 0;

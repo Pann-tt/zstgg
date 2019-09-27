@@ -59,7 +59,7 @@ export default {
     margin: 20px 0;
    }
    .el-pagination{
-    width:356px;
+    /*width:356px;*/
    }
    #displayPag>.el-pagination .el-pagination__jump{
     height:35px;

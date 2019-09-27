@@ -92,7 +92,7 @@ export default {
 	}
 	/*按钮*/
 	.secondNew .btn{
-		width: 100%;
+		/*width: 100%;*/
 		height: 70px;
 		position: absolute;
 		bottom: 0;
