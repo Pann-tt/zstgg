@@ -51,7 +51,7 @@ export default {
 		padding: 40px;
 		background-color: #fff;
 		position: relative;
-		margin:0 2%;
+		margin:0 4%;
 	}
 	/*标题*/
 	.secondNew .title{
@@ -92,7 +92,6 @@ export default {
 	}
 	/*按钮*/
 	.secondNew .btn{
-		width: 100%;
 		height: 70px;
 		position: absolute;
 		bottom: 0;

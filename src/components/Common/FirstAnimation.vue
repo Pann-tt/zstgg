@@ -75,7 +75,7 @@ export default {
 	.outer ul li{
 		display: inline-block;
 		width:310px;
-		margin:0 1.5%;
+		margin: 0 auto;
 	}
 	.firstAniOuter{
 		margin:15px auto;
@@ -244,5 +244,4 @@ export default {
 		font-size: 16px;
 	}
 }
-
 </style>

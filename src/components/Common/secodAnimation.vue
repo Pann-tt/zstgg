@@ -60,4 +60,166 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){
+	.secodAni{
+		width: 375px;
+		height: 260px;
+		position: relative;
+	}
+	.sAbgImg{
+		width: 100%;
+		height: 260px;
+	}
+	.sAbgImg img{
+		width: 375px;
+		height: 260px;
+	}
+	/*模糊背景*/
+	.Smask{
+		width: 100%;
+		height: 100%;
+	}
+	.sAmaskOne{
+		width: 100%;
+		height: 50%;
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.sAmaskTwo{
+		width: 100%;
+		height: 50%;
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	/*链接图标*/
+	.cycleLinkTop{
+		width: 100%;
+		height: 40px;
+		position: absolute;
+		bottom: 10px;	
+		left: 0;
+		text-align: center;
+	}
+	.cycleLinkTop span{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+		background-color: #fff;
+		color: #1dcfd1;
+		margin: 0 10px;
+		text-align: center;
+		line-height: 40px;
+		cursor: pointer;
+		font-size: 20px;
+	}
+	.cycleLinkTop span:hover{
+		background-color: #1dcfd1;
+		color:#fff;
+	}
+	.cycleLinkBottom{
+		width: 100%;
+		height: 70px;
+		position: absolute;
+		top: 20px;
+		left: 0;
+		text-align: center;
+	}
+	.cycleLinkBottom p{
+		color:#fff;
+		text-align: center;
+		font-size: 18px;
+		cursor: pointer;
+		margin-bottom: 10px;
+	}
+	.cycleLinkBottom p:hover{
+		color: #1dcfd1;
+	}
+}
+/*其他*/
+@media screen and (min-width: 768px){
+	.secodAni{
+		width: 337px;
+		height: 260px;
+		position: relative;
+	}
+	.sAbgImg{
+		width: 100%;
+		height: 260px;
+	}
+	.sAbgImg img{
+		width: 100%;
+		height: 260px;
+	}
+	/*模糊背景*/
+	.Smask{
+		width: 100%;
+		height: 100%;
+	}
+	.sAmaskOne{
+		width: 100%;
+		height: 50%;
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.sAmaskTwo{
+		width: 100%;
+		height: 50%;
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	/*链接图标*/
+	.cycleLinkTop{
+		width: 100%;
+		height: 40px;
+		position: absolute;
+		bottom: 10px;	
+		left: 0;
+		text-align: center;
+	}
+	.cycleLinkTop span{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+		background-color: #fff;
+		color: #1dcfd1;
+		margin: 0 10px;
+		text-align: center;
+		line-height: 40px;
+		cursor: pointer;
+		font-size: 20px;
+	}
+	.cycleLinkTop span:hover{
+		background-color: #1dcfd1;
+		color:#fff;
+	}
+	.cycleLinkBottom{
+		width: 100%;
+		height: 70px;
+		position: absolute;
+		top: 20px;
+		left: 0;
+		text-align: center;
+	}
+	.cycleLinkBottom p{
+		color:#fff;
+		text-align: center;
+		font-size: 18px;
+		cursor: pointer;
+		margin-bottom: 10px;
+	}
+	.cycleLinkBottom p:hover{
+		color: #1dcfd1;
+	}
+}
 </style>

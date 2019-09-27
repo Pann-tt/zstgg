@@ -254,3 +254,4 @@ export default {
 	}
 }
 </style>
+>>>>>>> 8357f6b22cb11e887bb00322c11bbde8e363183c

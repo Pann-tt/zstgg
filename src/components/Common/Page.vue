@@ -47,10 +47,7 @@ export default {
          this.$store.commit('isPage',this.$store.state.pageId);
          this.$parent.getNews(this.$store.state.pageId);         
      },
-   
- 
-}
-
+  }
 };
 </script>
 
@@ -61,8 +58,8 @@ export default {
     width: 100%;
     margin: 20px 0;
    }
-   .el-pagination{
-    width:356px;
+   #displayPag>.el-pagination{
+     padding: 2px 15px;
    }
    #displayPag>.el-pagination .el-pagination__jump{
     height:35px;

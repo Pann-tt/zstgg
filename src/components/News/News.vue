@@ -186,7 +186,6 @@ export default {
   },
 };
 </script>
-
 <style lang="css" scoped>
 /*手机*/
 @media screen and (max-width: 767px){
@@ -196,7 +195,7 @@ export default {
 		background-color: rgb(245,249,250);
 	}
 	.newscontent .nnew{
-		width:740px;
+		/*width:740px;*/
 	}
 	.newscontent .news{
 		margin:25px 0;

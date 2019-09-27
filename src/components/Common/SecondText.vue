@@ -36,14 +36,13 @@ export default {
 	.secouter .container{
 	}
 	.secouter .title{
-		width: 42%;
-	    margin: 0 auto;
+		text-align: center;
 	    line-height: 91px;
 	    font-size: 32px;
 		color: #fff;
 	}
 	.secouter .right{
-		width: 43%;
+		text-align: center;
 	    margin: 0 auto;
 	    line-height: 13px;
 		color: rgb(152,162,164);

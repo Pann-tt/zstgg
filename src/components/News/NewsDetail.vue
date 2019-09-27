@@ -191,7 +191,6 @@ export default {
   }
 };
 </script>
-
 <style lang="css" scoped>
 /*手机*/
 @media screen and (max-width: 767px){
