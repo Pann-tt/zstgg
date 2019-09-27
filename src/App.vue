@@ -2,7 +2,6 @@
   <div id="app"> 
     <div id="target"></div>
     <!-- 导航区域 -->
-    <Header />
     <div class="head">
       <Header />
     </div>
