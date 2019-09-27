@@ -47,9 +47,58 @@ export default {
          this.$store.commit('isPage',this.$store.state.pageId);
          this.$parent.getNews(this.$store.state.pageId);         
      },
-   
- 
-}
-
+  }
 };
 </script>
+
+<style lang="css">
+/*手机*/
+@media screen and (max-width: 767px){
+   #displayPag{
+    width: 100%;
+    margin: 20px 0;
+   }
+   .el-pagination{
+    width:356px;
+   }
+   #displayPag>.el-pagination .el-pagination__jump{
+    height:35px;
+   }
+   #displayPag>.el-pagination .el-input__inner{
+    height: 35px;
+   }
+   #displayPag>.el-pagination button{
+    height: 35px;
+    line-height: 35px;
+   }
+   #displayPag>.el-pagination .el-pager li{
+    height: 35px;
+    line-height: 35px;
+   }  
+}
+/*其他*/
+@media screen and (min-width: 768px){
+   #displayPag{
+    width: 100%;
+    margin: 20px 0;
+   }
+   .el-pagination{
+    width:500px;
+    padding: 3px 16px;
+   }
+   #displayPag>.el-pagination .el-pagination__jump{
+    height:35px;
+   }
+   #displayPag>.el-pagination .el-input__inner{
+    height: 35px;
+   }
+   #displayPag>.el-pagination button{
+    height: 35px;
+    line-height: 35px;
+   }
+   #displayPag>.el-pagination .el-pager li{
+    height: 35px;
+    line-height: 35px;
+   }
+}
+</style>

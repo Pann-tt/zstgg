@@ -1,6 +1,6 @@
 <template>
-	<el-container>
-      	<el-header height ='60px' >
+	<el-container	:style="style">
+      	<el-header height ='60px' :style="style">
             <div class="mainHeader">
 
                 <div class="nav-left">
@@ -22,13 +22,15 @@
             </div>
       	</el-header>
       	 <!-- 展开列表 -->
-            <div class="openlist" v-show="iponelist">
+            <transition name="draw">
+            	<div class="openlist" v-show="iponelist">
 	    		<ul>
 	    			<li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{active:index==current}">
 		                <router-link :to='{name:list.name}'>{{list.title}}</router-link>
 		            </li>
 	    		</ul>
 	    	</div>
+            </transition>
       	<div class="clear"></div>
     </el-container>
 </template>
@@ -47,6 +49,9 @@ export default {
 		    current:0,
 		    show:false,
 		    iponelist:false,
+		    style:{
+		    	width:'',
+		    }
       	};
     },
     methods:{
@@ -54,6 +59,7 @@ export default {
     		this.$store.state.pageId=1;
       		this.current=index;
       		this.$store.state.page=1;
+      		this.iponelist=false;
     	},
     	openIphone(){
     		this.iponelist=!this.iponelist;
@@ -87,6 +93,9 @@ export default {
 	    if(this.$store.state.isname=="NewsDetail"){
 	     	this.bgcAdd(2);
 	    }
+
+	    this.style.width=document.body.clientWidth+'px';
+	    console.log(this.style.width);
   	}
 };
 </script>
@@ -94,6 +103,16 @@ export default {
 <style lang="css" scoped>
 /*手机*/
 @media screen and (max-width: 767px){
+	.openlist{
+	    height:200px;width: 200px;
+	    background-color:black;
+	}
+	.draw-enter-active, .draw-leave-active{
+	    transition: all 1s ease;
+	}
+	.draw-enter, .draw-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	    height: 0;
+	}
 	.clear{ clear:both} 
 	/*点击添加背景色*/
 	.active{

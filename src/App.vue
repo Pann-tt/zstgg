@@ -1,17 +1,18 @@
 <template>
   <div id="app"> 
     <div id="target"></div>
-    <!-- 导航区域 -->
     <Header />
+    
+    <!-- 导航区域 -->
     <div class="head">
-      <Header />
+      
     </div>
+    
     <router-view :key="key"/>
       <Footer />
       <div class="slideTop">
         <my-slide />
       </div>
-
   </div>
 </template>
 
@@ -37,16 +38,35 @@ export default {
 </script>
 
 <style>
-.head{
-  width: 100%;
-  /*height: 130px;*/
+/*手机*/
+@media screen and (max-width: 767px){
+  .clear{ clear:both}
+  .head{
+    width: 100%;
+    height: 60px;
+  }
+  .slideTop{
+    widows: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+  }
 }
-.slideTop{
-  widows: 40px;
-  height: 60px;
-  position: fixed;
-  bottom: 40px;
-  right: 20px;
+/*其他*/
+@media screen and (min-width: 768px){
+  .clear{ clear:both} 
+  .head{
+    width: 100%;
+    height: 130px;
+  }
+  .slideTop{
+    widows: 40px;
+    height: 60px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+  }
 }
 </style>
 
