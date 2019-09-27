@@ -74,14 +74,14 @@ export default {
 @media screen and (max-width: 767px){
 	.outer ul li{
 		display: inline-block;
-		width:310px;
+		width: 100%;
 		margin: 0 auto;
 	}
 	.firstAniOuter{
+		width: 100%;
 		margin:15px auto;
 		display:inline-block;
 		text-align: center;
-		width:310px;
 	}
 	.firstAniOuter .iconouter{
 		display:inline-block;

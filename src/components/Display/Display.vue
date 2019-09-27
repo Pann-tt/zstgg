@@ -6,6 +6,7 @@
 		</div>
 		<!-- 展示案例 -->
 		<div class="water">
+			<!-- 非手机样式 -->
 			<div class="waterfall-wrapper">
 			    <!-- 左边 -->
 			    <ul class="left-waterfall" ref="left">
@@ -22,6 +23,14 @@
 			    <!-- 右边 -->
 			    <ul class="right-waterfall" ref="right">
 			      	<li class="item" v-for="(item, index) in rightItems" >
+			        	<my-thirdAnimation :item="item" :productList="productList"></my-thirdAnimation>
+			      	</li>
+			    </ul>
+ 	 		</div>
+			<!-- 手机样式 -->
+ 	 		<div class="productsList">
+ 	 			<ul class="left-waterfall" ref="left">
+			      	<li class="item" v-for="(item, index) in productList" >
 			        	<my-thirdAnimation :item="item" :productList="productList"></my-thirdAnimation>
 			      	</li>
 			    </ul>
@@ -100,7 +109,6 @@ export default {
   	created(){
     	this.getproductList();
   	},
-  	
 };
 </script>
 
@@ -128,14 +136,17 @@ export default {
 		/*height: 3000px;*/
 		overflow: hidden;
 	}
+	.productsList{
+		width: 88%;
+    	margin: 0 auto;
+	}
 	.waterfall-wrapper{
 	    width: 88%;
-	    /*height:2000px;*/
-	    /*background-color: pink;*/
+		display: none;
 	    margin: 0 auto;
 	  }
 	  ul {
-	    width:360px;
+	    /*width:360px;*/
 	  }
 
 	  ul.left-waterfall {
@@ -178,6 +189,9 @@ export default {
 }
 /*其他*/
 @media screen and (min-width: 768px){
+	.productsList{
+		display: none;
+	}
 	.mainDisplay{
 		background-color: #ecf0f1;
 	}

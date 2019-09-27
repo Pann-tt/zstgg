@@ -201,7 +201,7 @@ export default {
 	}
 	/*底部文本*/
 	.thirdAni .Bottomtext{
-		width: 290px;
+		/*width: 290px;*/
 		height: 50px;
 		background-color: #fff;
 		color: rgb(51,51,51);

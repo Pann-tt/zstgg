@@ -210,6 +210,7 @@ export default {
 		display: block;
 	}
 	.newscontent .sideright{
+		display: none;
 	    margin: 25px 30px 70px 16px;
 	    width: 344px;
 	}

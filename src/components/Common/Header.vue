@@ -16,21 +16,23 @@
                     </ul>
                 	<!-- 手机样式 -->
                 	<div class="right_ipone">
-                		<span class="iconfont" @click="openIphone">&#xe6e5;</span>
+                		<span class="iconfont" @click="openIphone">&#xe76a;</span>
                 	</div>
                 </div>
             </div>
       	</el-header>
       	 <!-- 展开列表 -->
-            <transition name="draw">
-	            <div class="openlist" v-show="iponelist">
-		    		<ul>
-		    			<li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{active:index==current}">
-			                <router-link :to='{name:list.name}'>{{list.title}}</router-link>
-			            </li>
-		    		</ul>
-		    	</div>
-            </transition>
+      	 <div style="height: 244px;">
+      	  <el-collapse-transition>
+            <div class="openlist transition-box" v-show="iponelist">
+	    		<ul>
+	    			<li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{active:index==current}">
+		                <router-link :to='{name:list.name}'>{{list.title}}</router-link>
+		            </li>
+	    		</ul>
+	    	</div>
+	    </el-collapse-transition>
+	</div>
       	<div class="clear"></div>
     </el-container>
 </template>
@@ -103,16 +105,18 @@ export default {
 <style lang="css" scoped>
 /*手机*/
 @media screen and (max-width: 767px){
-	.openlist{
-	    height:200px;width: 200px;
-	    background-color:black;
-	}
-	.draw-enter-active, .draw-leave-active{
-	    transition: all 1s ease;
-	}
-	.draw-enter, .draw-leave-to /* .fade-leave-active below version 2.1.8 */ {
-	    height: 0;
-	}
+	.transition-box{
+	    /*margin-bottom: 10px;*/
+	    height:244px;
+	    width: 200px;
+	    border-radius: 4px;
+	    background-color: #fff;
+	    text-align: center;
+	    /*color: #fff;*/
+	    /*padding: 40px 20px;*/
+	    box-sizing: border-box;
+	    margin-right: 20px;
+  	}
 	.clear{ clear:both} 
 	/*点击添加背景色*/
 	.active{
@@ -136,7 +140,7 @@ export default {
 		height:60px;
 	}
 	.mainHeader{
-		width: 88%;
+		/*width: 88%;*/
 		height: 100%;
 		margin: 0 auto;
 	}
@@ -149,7 +153,7 @@ export default {
 		line-height:85px;
 	}
 	.mainHeader .nav-left img{
-		width: 100%;
+		/*width: 100%;*/
 	    height: 35px;
 	    margin-top: 15px;
 	}
@@ -173,6 +177,7 @@ export default {
 		height: 40px;
 		line-height: 60px;
 		font-size: 40px;
+		color:#1dcfd1;
 	}
 	/*展开列表*/
 	.openlist{

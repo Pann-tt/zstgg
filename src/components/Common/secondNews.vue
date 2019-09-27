@@ -51,7 +51,7 @@ export default {
 		padding: 40px;
 		background-color: #fff;
 		position: relative;
-		margin:0 4%;
+		margin:0 auto;
 	}
 	/*标题*/
 	.secondNew .title{

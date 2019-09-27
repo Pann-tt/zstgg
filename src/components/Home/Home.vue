@@ -125,14 +125,14 @@ export default {
 		text-align: center;
 	}
 	.blueLine>.container>h1{
-		font-size: 45px;
+		font-size: 40px;
 		font-weight: 400;
 		margin: 30px 0;
 	}
 	.blueLine>.container>p{
 		font-size: 14px;
 		font-weight: 400;
-		line-height: 1.4;
+		line-height: 1.8;
 	}
 	/*文字组件*/
 	.homeText{

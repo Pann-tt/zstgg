@@ -87,9 +87,8 @@ export default {
 <style lang="css" scoped>
 /*手机*/
 @media screen and (max-width: 767px){
-	#oneDiv .leftone,#oneDiv .lefttwo{
-	  width: 275px;
-	 }
+
+	
 	 .footouter{
 	  background-color: rgb(27,28,31);
 	  height: 1500px;
@@ -97,19 +96,20 @@ export default {
 	  font-size: 16px;
 	  position: relative;
 	 }
+	 .footouter .container{
+	 	width:80%;
+	 }
 	 .footouter .leftone{
+	  width: 100%;
 	  display: inline-block;
-	  width:270px;
-	  float: left;
 	  padding: 100px 0 50px;
-	  margin:0 6px;
+	  margin:0 auto;
 	 }
 	 .footouter .lefttwo,.footouter .righttwo,.footouter .rightone{
+	  width: 100%;
 	  display: inline-block;
-	  width:270px;
-	  float: left;
 	  padding: 0px 0  50px;
-	  margin:0 6px;
+	  margin:0 auto;
 	 }
 	 .footouter h5{
 	  color: #fff;

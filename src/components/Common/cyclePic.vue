@@ -1,12 +1,20 @@
 <template>
-	<div class="slide">
-		<el-carousel :interval="5000" arrow="always">
-	    	<el-carousel-item v-for="Item in cyclePicture" :key="Item.id">
-	    		<img :src="Item.img" class="bmp" style="height:680px;width:100%">
-	    		<h2 class="htitle">{{Item.title}}</h2>
-	    	</el-carousel-item>
-  		</el-carousel>
-	</div>
+ <div class="slide">
+  <!-- 非手机样式 -->
+  <el-carousel :interval="5000" arrow="always" id="computer">
+      <el-carousel-item v-for="Item in cyclePicture" :key="Item.id">
+       <img :src="Item.img" class="bmp" style="height:680px;width:100%">
+       <h2 class="htitle">{{Item.title}}</h2>
+      </el-carousel-item>
+    </el-carousel>
+      <!-- 手机样式 -->
+      <el-carousel :interval="5000" arrow="always" id="phone">
+        <el-carousel-item v-for="Item in cyclePicture" :key="Item.id">
+          <img :src="Item.img" class="bmp" style="height:210px;width:100%">
+          <h2 class="htitle">{{Item.title}}</h2>
+        </el-carousel-item>
+      </el-carousel>
+ </div>
 
 </template>
 
@@ -17,7 +25,7 @@ export default {
 
   data() {
     return {
-    	cyclePicture:{},
+     cyclePicture:{},
     };
   },
   methods:{
@@ -42,6 +50,9 @@ export default {
 <style lang="css">
 /*手机*/
 @media screen and (max-width: 767px){
+  #computer{
+    display: none;
+  }
   .el-carousel__item:nth-child(2n){
     background-color: #99a9bf;
   }
@@ -58,12 +69,12 @@ export default {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 55%;
-    color:#fff;
-    font-size: 40px;
+    top: 40%;
+    color: #fff;
+    font-size: 35px;
   }
   .el-carousel-item .bmp{
-    height:680px;
+    height:210px;
     width:100%;
   }
 }

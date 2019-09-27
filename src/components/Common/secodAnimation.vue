@@ -63,7 +63,7 @@ export default {
 /*手机*/
 @media screen and (max-width: 767px){
 	.secodAni{
-		width: 375px;
+		width: 100%;
 		height: 260px;
 		position: relative;
 	}
@@ -72,7 +72,7 @@ export default {
 		height: 260px;
 	}
 	.sAbgImg img{
-		width: 375px;
+		width: 100%;
 		height: 260px;
 	}
 	/*模糊背景*/

@@ -205,7 +205,7 @@ export default {
 	.newscontent .newdetail{
 		padding: 35px;
 	    width: 275px;
-	    margin: 25px 15px;
+	    margin: 25px auto;
 		background-color: #fff;
 	}
 	.newscontent .newdetail .heading{
@@ -232,7 +232,8 @@ export default {
 		display: block;
 	}
 	.newscontent .sideright{
-		margin: 25px 30px 70px 16px;
+		display:none;
+		margin: 25px auto 70px;
 	    width: 344px;
 	}
 	.newscontent .sideright .relaside{

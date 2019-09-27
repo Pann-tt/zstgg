@@ -47,8 +47,8 @@ export default {
     widows: 40px;
     height: 60px;
     position: fixed;
-    bottom: 40px;
-    right: 20px;
+    bottom: 30px;
+    right: 23px;
   }
 }
 /*其他*/

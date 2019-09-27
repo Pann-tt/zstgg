@@ -68,7 +68,7 @@ export default {
 		display: inline-block;
 	}
 	.produce .produceimg{
-		width: 375px;
+		width: 100%;
     	height: 480px;
 		overflow: hidden;
 	}
@@ -78,8 +78,9 @@ export default {
 		display: block;
 	}
 	.produce .producetext{
-		margin: 50px 38px 12px 38px;
-		width:300px;
+		margin: 50px auto 12px;
+		width:84%;
+		padding:0 30px;
 	}
 	.produce .producetext .title{
 		font-size:28px ;

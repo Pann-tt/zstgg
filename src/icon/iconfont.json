@@ -27,11 +27,32 @@
       "unicode_decimal": 58883
     },
     {
+      "icon_id": "571725",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
       "icon_id": "616928",
       "name": "链接",
       "font_class": "lianjie",
       "unicode": "e66e",
       "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "688060",
+      "name": "查找 表单 列表",
+      "font_class": "chazhaobiaodanliebiao",
+      "unicode": "e76a",
+      "unicode_decimal": 59242
+    },
+    {
+      "icon_id": "723316",
+      "name": "列表",
+      "font_class": "ai-list",
+      "unicode": "e610",
+      "unicode_decimal": 58896
     },
     {
       "icon_id": "966101",
@@ -48,11 +69,25 @@
       "unicode_decimal": 58960
     },
     {
+      "icon_id": "1129589",
+      "name": "列表",
+      "font_class": "liebiao1",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
       "icon_id": "1343938",
       "name": "下一页",
       "font_class": "xiayiye-copy",
       "unicode": "e656",
       "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "1472510",
+      "name": "列表",
+      "font_class": "liebiao2",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
     },
     {
       "icon_id": "2116272",
