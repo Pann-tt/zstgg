@@ -40,6 +40,34 @@ export default {
 </script>
 
 <style lang="css">
+/*手机*/
+@media screen and (max-width: 767px){
+  .el-carousel__item:nth-child(2n){
+    background-color: #99a9bf;
+  }
+  .el-carousel__item:nth-child(2n+1){
+    background-color: #d3dce6;
+  }
+  .slide .el-carousel__container{
+    height: 210px;
+  }
+  .slide{
+    position: relative;
+  }
+  .htitle{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 55%;
+    color:#fff;
+    font-size: 40px;
+  }
+  .el-carousel-item .bmp{
+    height:680px;
+    width:100%;
+  }
+}
+@media screen and (min-width: 768px){
   .el-carousel__item:nth-child(2n){
     background-color: #99a9bf;
   }
@@ -48,21 +76,22 @@ export default {
     background-color: #d3dce6;
   }
   .slide .el-carousel__container{
-	height: 680px;
+  height: 680px;
   }
   .slide{
-  	position: relative;
+    position: relative;
   }
   .htitle{
-  	position: absolute;
-  	width: 100%;
-  	text-align: center;
-  	top: 55%;
-  	color:#fff;
-  	font-size: 50px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 55%;
+    color:#fff;
+    font-size: 50px;
   }
   .el-carousel-item .bmp{
     height:680px;
     width:100%;
   }
+}
 </style>

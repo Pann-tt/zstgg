@@ -53,27 +53,3 @@ export default {
 
 };
 </script>
-
-<style lang="css">
- #displayPag{
-  width: 100%;
-  margin: 20px 0;
- }
- .el-pagination{
-  width:500px;
- }
- #displayPag>.el-pagination .el-pagination__jump{
-  height:35px;
- }
- #displayPag>.el-pagination .el-input__inner{
-  height: 35px;
- }
- #displayPag>.el-pagination button{
-  height: 35px;
-  line-height: 35px;
- }
- #displayPag>.el-pagination .el-pager li{
-  height: 35px;
-  line-height: 35px;
- }
-</style>

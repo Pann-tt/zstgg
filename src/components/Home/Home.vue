@@ -81,63 +81,126 @@ export default {
   	},
 };
 </script>
-
 <style lang="css" scoped>
-/*动画组件一*/
-.homeFirAni{
-	padding: 80px 0;
+/*手机*/
+@media screen and (max-width: 767px){
+	/*动画组件一*/
+	.homeFirAni{
+		padding: 80px 0;
+	}
+	/*产品展示栏*/
+	.blackLine{
+		width: 100%;
+		height: 40px;
+		background-color: #1b1c1f;
+		padding:60px 0;
+		text-align: center;
+	}
+	.blackLine>h1{
+		font-size: 32px;
+		font-weight: 400;
+		color: #fff;
+	}
+	/*动画组件二*/
+	.homeTwoAni{
+		width: 100%;
+		height: 260px;
+		overflow: hidden;
+	}
+	.homeTwoAni>ul{
+		width: 100%;
+		height: 100%;
+	}
+	.homeTwoAni>ul li{
+		height: 100%;
+		float: left;
+	}
+	/*蓝色栏*/
+	.blueLine{
+		width: 100%;
+		/*height:180px;*/
+		padding: 80px 0;
+		background-color: #1dcfd1;
+		color: #fff;
+		text-align: center;
+	}
+	.blueLine>.container>h1{
+		font-size: 45px;
+		font-weight: 400;
+		margin: 30px 0;
+	}
+	.blueLine>.container>p{
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+	/*文字组件*/
+	.homeText{
+		margin-top: 80px;
+	}
+	/*新闻组件*/
+	.honeNews{
+		margin-bottom: 80px;
+	}
 }
-/*产品展示栏*/
-.blackLine{
-	width: 100%;
-	height: 40px;
-	background-color: #1b1c1f;
-	padding:80px 0;
-	text-align: center;
-}
-.blackLine>h1{
-	font-size: 32px;
-	font-weight: 400;
-	color: #fff;
-}
-/*动画组件二*/
-.homeTwoAni{
-	width: 100%;
-	height: 260px;
-	overflow: hidden;
-}
-.homeTwoAni>ul{
-	width: 100%;
-	height: 100%;
-}
-.homeTwoAni>ul li{
-	height: 100%;
-	float: left;
-}
-/*蓝色栏*/
-.blueLine{
-	width: 100%;
-	height:180px;
-	padding: 100px 0;
-	background-color: #1dcfd1;
-	color: #fff;
-	text-align: center;
-}
-.blueLine>.container>h1{
-	font-size: 54px;
-	font-weight: 400;
-	margin: 30px 0;
-}
-.blueLine>.container>p{
-	font-size: 15px;
-	font-weight: 400;
-}
-/*文字组件*/
-.homeText{
-	margin-top: 80px;
-}
-/*新闻组件*/
-.honeNews{
-	margin-bottom: 80px;
+/*其他*/
+@media screen and (min-width: 768px){
+	/*动画组件一*/
+	.homeFirAni{
+		padding: 80px 0;
+	}
+	/*产品展示栏*/
+	.blackLine{
+		width: 100%;
+		height: 40px;
+		background-color: #1b1c1f;
+		padding:80px 0;
+		text-align: center;
+	}
+	.blackLine>h1{
+		font-size: 32px;
+		font-weight: 400;
+		color: #fff;
+	}
+	/*动画组件二*/
+	.homeTwoAni{
+		width: 100%;
+		height: 260px;
+		overflow: hidden;
+	}
+	.homeTwoAni>ul{
+		width: 100%;
+		height: 100%;
+	}
+	.homeTwoAni>ul li{
+		height: 100%;
+		float: left;
+	}
+	/*蓝色栏*/
+	.blueLine{
+		width: 100%;
+		height:180px;
+		padding: 100px 0;
+		background-color: #1dcfd1;
+		color: #fff;
+		text-align: center;
+	}
+	.blueLine>.container>h1{
+		font-size: 54px;
+		font-weight: 400;
+		margin: 30px 0;
+	}
+	.blueLine>.container>p{
+		font-size: 15px;
+		font-weight: 400;
+	}
+	/*文字组件*/
+	.homeText{
+		margin-top: 80px;
+	}
+	/*新闻组件*/
+	.honeNews{
+		margin-bottom: 80px;
+	}
 }
 </style>

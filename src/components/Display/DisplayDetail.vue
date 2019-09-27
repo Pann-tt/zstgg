@@ -135,116 +135,234 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.clearfix{
-	content:'';
-  	clear: both;
-  	display: block;
+/*手机*/
+@media screen and (max-width: 767px){
+	.clearfix{
+		content:'';
+	  	clear: both;
+	  	display: block;
+	}
+	.details{
+		width: 100%;
+		/*height: auto;*/
+		padding: 120px 0;
+		background-color: rgb(236,240,241);
+	}
+	/*左边*/
+	.det-left{
+		width:100%;
+		height:100%;
+		float: left;
+		position: relative;
+		/*background-color: pink;*/
+	}
+	.det-left img{
+		width:100%;
+	}
+	.det-left button{
+		width:60px;
+		height:40px;
+		border: none;
+		color: #fff;
+		background-color: rgba(0,0,0,0.5);
+	}
+	#prev{
+		position: absolute;
+		left: 0;
+		top:40%;
+	}
+	#next{
+		position: absolute;
+		right: 0;
+		top:40%;
+	}
+	.quan{
+		width:100%;
+		height: 8px;
+		margin: 5px 0;
+		text-align: center;
+	}
+	.quan span{
+		display: inline-block;
+		width:10px;
+		height:10px;
+		margin: 0 10px;
+		border-radius: 5px;
+		background-color: #1dcfd1;
+	}
+	/*右边*/
+	.det-right{
+		width:100%;
+		height:100%;
+		float: right;
+		margin-top: 35px;
+	}
+	.righttext{
+		width:90%;
+	}
+	.righttext h2{
+		font-size: 24px;
+		color: #454646;
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+	.righttext .text{
+		width:100%;
+		margin-bottom: 30px;
+		font-size: 16px;
+		color: #98a2a4;
+		font-weight: normal;
+		line-height: 27px;
+	}
+	.righttext .text p{
+		width:100%;
+		font-size: 14px;
+		color: #98a2a4;
+		margin-bottom: 30px;
+		line-height: 27px;
+	}
+	.righttext .text h5{
+		margin-bottom: 20px;
+		/*line-height: 27px;*/
+	}
+	.righttext ul{
+		width:100%;
+		height:96px;
+		color:#98a2a4;
+		font-size: 16px;
+		margin-bottom: 30px;
+	}
+	.righttext ul li{
+		line-height: 32px;
+	}
+	.righttext ul li>span{
+		color:#45464b;
+	}
+	.icon{
+		width:100%;
+		height:44px;
+	}
+	.icon span a{
+		color:orange;
+		height:32px;
+		width:32px;
+		margin: 6px 6px 6px 0;
+		font-size: 32px;
+	}
 }
-.details{
-	width: 100%;
-	/*height: auto;*/
-	padding: 120px 0;
-	background-color: rgb(236,240,241);
-}
-/*左边*/
-.det-left{
-	width:66%;
-	height:100%;
-	float: left;
-	position: relative;
-	/*background-color: pink;*/
-}
-.det-left img{
-	width:100%;
-}
-.det-left button{
-	width:60px;
-	height:40px;
-	border: none;
-	color: #fff;
-	background-color: rgba(0,0,0,0.5);
-}
-#prev{
-	position: absolute;
-	left: 0;
-	top:40%;
-}
-#next{
-	position: absolute;
-	right: 0;
-	top:40%;
-}
-.quan{
-	width:100%;
-	height: 8px;
-	margin: 5px 0;
-	text-align: center;
-}
-.quan span{
-	display: inline-block;
-	width:10px;
-	height:10px;
-	margin: 0 10px;
-	border-radius: 5px;
-	background-color: #1dcfd1;
-}
-/*右边*/
-.det-right{
-	width:32%;
-	height:100%;
-	float: right;
-}
-.righttext{
-	width:90%;
-	margin-left: 10%;
-}
-.righttext h2{
-	font-size: 24px;
-	color: #454646;
-	font-weight: 400;
-	margin-bottom: 20px;
-}
-.righttext .text{
-	width:100%;
-	margin-bottom: 30px;
-	font-size: 16px;
-	color: #98a2a4;
-	font-weight: normal;
-	line-height: 27px;
-}
-.righttext .text p{
-	width:100%;
-	font-size: 14px;
-	color: #98a2a4;
-	margin-bottom: 30px;
-	line-height: 27px;
-}
-.righttext .text h5{
-	margin-bottom: 20px;
-	/*line-height: 27px;*/
-}
-.righttext ul{
-	width:100%;
-	height:96px;
-	color:#98a2a4;
-	font-size: 16px;
-	margin-bottom: 30px;
-}
-.righttext ul li{
-	line-height: 32px;
-}
-.righttext ul li>span{
-	color:#45464b;
-}
-.icon{
-	width:100%;
-	height:44px;
-}
-.icon span a{
-	color:orange;
-	height:32px;
-	width:32px;
-	margin: 6px 6px 6px 0;
-	font-size: 32px;
+/*其他*/
+@media screen and (min-width: 768px){
+	.clearfix{
+		content:'';
+	  	clear: both;
+	  	display: block;
+	}
+	.details{
+		width: 100%;
+		/*height: auto;*/
+		padding: 120px 0;
+		background-color: rgb(236,240,241);
+	}
+	/*左边*/
+	.det-left{
+		width:66%;
+		height:100%;
+		float: left;
+		position: relative;
+		/*background-color: pink;*/
+	}
+	.det-left img{
+		width:100%;
+	}
+	.det-left button{
+		width:60px;
+		height:40px;
+		border: none;
+		color: #fff;
+		background-color: rgba(0,0,0,0.5);
+	}
+	#prev{
+		position: absolute;
+		left: 0;
+		top:40%;
+	}
+	#next{
+		position: absolute;
+		right: 0;
+		top:40%;
+	}
+	.quan{
+		width:100%;
+		height: 8px;
+		margin: 5px 0;
+		text-align: center;
+	}
+	.quan span{
+		display: inline-block;
+		width:10px;
+		height:10px;
+		margin: 0 10px;
+		border-radius: 5px;
+		background-color: #1dcfd1;
+	}
+	/*右边*/
+	.det-right{
+		width:32%;
+		height:100%;
+		float: right;
+	}
+	.righttext{
+		width:90%;
+		margin-left: 10%;
+	}
+	.righttext h2{
+		font-size: 24px;
+		color: #454646;
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+	.righttext .text{
+		width:100%;
+		margin-bottom: 30px;
+		font-size: 16px;
+		color: #98a2a4;
+		font-weight: normal;
+		line-height: 27px;
+	}
+	.righttext .text p{
+		width:100%;
+		font-size: 14px;
+		color: #98a2a4;
+		margin-bottom: 30px;
+		line-height: 27px;
+	}
+	.righttext .text h5{
+		margin-bottom: 20px;
+		/*line-height: 27px;*/
+	}
+	.righttext ul{
+		width:100%;
+		height:96px;
+		color:#98a2a4;
+		font-size: 16px;
+		margin-bottom: 30px;
+	}
+	.righttext ul li{
+		line-height: 32px;
+	}
+	.righttext ul li>span{
+		color:#45464b;
+	}
+	.icon{
+		width:100%;
+		height:44px;
+	}
+	.icon span a{
+		color:orange;
+		height:32px;
+		width:32px;
+		margin: 6px 6px 6px 0;
+		font-size: 32px;
+	}
 }
 </style>

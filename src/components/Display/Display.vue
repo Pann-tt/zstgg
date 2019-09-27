@@ -105,6 +105,79 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){
+	.mainDisplay{
+		background-color: #ecf0f1;
+	}
+	/*文本组件*/
+	.displayText{
+		margin-bottom: 100px;
+	}
+	/*案例展示*/
+	.displayAni{
+		width: 100%;
+		height: auto;
+	}
+	.displayAni ul{
+		padding: 15px 0;
+	}
+	/*瀑布流*/
+	.water{
+		width:100%;
+		/*height: 3000px;*/
+		overflow: hidden;
+	}
+	.waterfall-wrapper{
+	    width: 88%;
+	    /*height:2000px;*/
+	    /*background-color: pink;*/
+	    margin: 0 auto;
+	  }
+	  ul {
+	    width:360px;
+	  }
+
+	  ul.left-waterfall {
+	    width: 100%;
+	    float: left;
+	  }
+	  ul.center-waterfall{
+	    float: left;
+	    width: 100%;
+	  }
+	  ul.right-waterfall {
+	    float: left;
+	    width: 100%;
+	  }
+	  li.item {
+	    width: 100%;
+	  }
+	/*分页*/
+	.pagings{
+		height: 150px;
+		/*background-color: green;*/
+		width:88%;
+		margin:0 auto;
+		padding-left: 22px;
+	}
+	/*蓝色栏*/
+	.displayBlue{
+		width:100%;
+		height: 50px;
+		background-color: #1dcfd1;
+		padding: 75px 0;
+		line-height: 50px;
+	}
+	.displayBlue h1{
+		color: #fff;
+		font-size: 32px;
+		font-weight: 400;
+		text-align: center;
+	}
+}
+/*其他*/
+@media screen and (min-width: 768px){
 	.mainDisplay{
 		background-color: #ecf0f1;
 	}
@@ -172,4 +245,5 @@ export default {
 		font-size: 32px;
 		font-weight: 400;
 	}
+}
 </style>

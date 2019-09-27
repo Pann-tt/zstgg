@@ -34,25 +34,3 @@ export default {
   }
 };
 </script>
-
-<style lang="css" scoped>
-	.firstnewouter .fnli{
-		text-align:center;
-		padding-bottom: 35px;
-		border-bottom: 1px solid #E8E8E8;
-	}
-	.firstnewouter .fnli .title{
-		cursor: pointer;
-		font-size: 25px;
-		margin-top: 25px;
-		margin-bottom: 15px;
-	}
-	.firstnewouter .fnli .title:hover{
-		color:  rgb(29,207,209);
-	}
-	.firstnewouter .fnli .time{
-		color:#BFBFBF;
-		font-size: 12px;
-
-	}
-</style>
